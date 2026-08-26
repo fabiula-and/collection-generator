@@ -255,19 +255,88 @@ const coresSecundarias = [
     "Vinho"
 ];
 
-let modoSelecionado = "ideia";
-let escalaSelecionada = "1 peça";
+
+// ===== ESTADO =====
+
+let modoSelecionado = "livre";
+
+
+// ===== FUNÇÕES DE SORTEIO =====
+
+function sortear(lista) {
+    return lista[Math.floor(Math.random() * lista.length)];
+}
+
+function sortearVarios(lista, quantidade) {
+    const copia = [...lista];
+    const resultado = [];
+
+    for (let i = 0; i < quantidade; i++) {
+        const indice = Math.floor(Math.random() * copia.length);
+        resultado.push(copia[indice]);
+        copia.splice(indice, 1);
+    }
+
+    return resultado;
+}
+
+
+// ===== ELEMENTOS DO RESULTADO =====
+
+const camposResultado = {
+    modo: document.getElementById("modo"),
+    tema: document.getElementById("tema"),
+    cor: document.getElementById("cor"),
+    corSecundaria: document.getElementById("cor-secundaria"),
+    material: document.getElementById("material"),
+    estampa: document.getElementById("estampa"),
+    linguagem: document.getElementById("linguagem"),
+    atmosfera: document.getElementById("atmosfera"),
+    universo: document.getElementById("universo"),
+    construcao: document.getElementById("construcao")
+};
+
+
+// ===== LIMPAR RESULTADO =====
+
+function limparResultado() {
+    camposResultado.modo.textContent = "";
+    camposResultado.tema.textContent = "";
+    camposResultado.cor.textContent = "";
+    camposResultado.corSecundaria.textContent = "";
+    camposResultado.material.textContent = "";
+    camposResultado.estampa.textContent = "";
+    camposResultado.linguagem.textContent = "";
+    camposResultado.atmosfera.textContent = "";
+    camposResultado.universo.textContent = "";
+    camposResultado.construcao.textContent = "";
+}
+
+
+// ===== MOSTRAR RESULTADO =====
+
+function mostrarResultado(resultado) {
+
+    limparResultado();
+
+    camposResultado.modo.textContent = resultado.modo || "";
+    camposResultado.tema.textContent = resultado.tema || "";
+    camposResultado.cor.textContent = resultado.cor || "";
+    camposResultado.corSecundaria.textContent = resultado.corSecundaria || "";
+    camposResultado.material.textContent = resultado.material || "";
+    camposResultado.estampa.textContent = resultado.estampa || "";
+    camposResultado.linguagem.textContent = resultado.linguagem || "";
+    camposResultado.atmosfera.textContent = resultado.atmosfera || "";
+    camposResultado.universo.textContent = resultado.universo || "";
+    camposResultado.construcao.textContent = resultado.construcao || "";
+}
 
 
 // ===== MODOS =====
 
-document.getElementById("modo-livre").addEventListener("click", function() {
-    modoSelecionado = "livre";
-
-    console.log("Modo escolhido:", modoSelecionado);
-});
-
-const botoesModo = document.querySelectorAll("#modo-ideia, #modo-estampa, #modo-mini, #modo-completa, #modo-caos");
+const botoesModo = document.querySelectorAll(
+    "#modo-livre, #modo-ideia, #modo-conceito, #modo-imersao, #modo-estampa, #modo-caos"
+);
 
 botoesModo.forEach(function(botao) {
 
@@ -284,78 +353,59 @@ botoesModo.forEach(function(botao) {
         modoSelecionado = botao.id.replace("modo-", "");
 
         console.log("Modo escolhido:", modoSelecionado);
-
     });
 
 });
 
 
-// ===== ESCALA =====
+// ===== SORTEIO LIVRE =====
 
-const botoesEscala = document.querySelectorAll(".escala");
+function gerarLivre() {
 
-botoesEscala.forEach(function(botao) {
+    return {
+        modo: "Livre",
 
-    botao.addEventListener("click", function() {
+        tema: sortear(temas),
 
-        botoesEscala.forEach(function(b) {
-            b.style.backgroundColor = "";
-            b.style.color = "";
-        });
+        cor: sortear(cores),
 
-        botao.style.backgroundColor = "#111827";
-        botao.style.color = "white";
+        corSecundaria: sortear(coresSecundarias),
 
-        escalaSelecionada = botao.textContent;
+        material: sortear(materiais),
 
-        console.log("Escala escolhida:", escalaSelecionada);
+        estampa: sortear(estampas),
 
-        document.getElementById("escala").textContent = escalaSelecionada;
+        linguagem: sortear(linguagens),
 
-    });
+        atmosfera: sortear(atmosferas),
 
-});
+        universo: sortear(universos),
+
+        construcao: sortear(construcoes)
+    };
+}
 
 
-// ===== BOTÃO GERAR =====
+// ===== GERAR =====
 
 document.getElementById("gerar").addEventListener("click", function() {
 
     console.log("Gerando modo:", modoSelecionado);
-    
-    const temaSorteado = temas[Math.floor(Math.random() * temas.length)];
-    const corSorteada = cores[Math.floor(Math.random() * cores.length)];
-    const corSecundariaSorteada = coresSecundarias[
-    Math.floor(Math.random() * coresSecundarias.length)
-];
-    const materialSorteado = materiais[
-    Math.floor(Math.random() * materiais.length)
-];
-    const estampaSorteada = estampas[
-    Math.floor(Math.random() * estampas.length)
-];
-    const linguagemSorteada = linguagens[
-    Math.floor(Math.random() * linguagens.length)
-];
-    const atmosferaSorteada = atmosferas[
-    Math.floor(Math.random() * atmosferas.length)
-];
-    const universoSorteado = universos[
-    Math.floor(Math.random() * universos.length)
-];
-    const construcaoSorteada = construcoes[
-    Math.floor(Math.random() * construcoes.length)
-];
 
-    document.getElementById("tema").textContent = temaSorteado;
-    document.getElementById("cor").textContent = corSorteada;
-    document.getElementById("cor-secundaria").textContent = corSecundariaSorteada;
-    document.getElementById("material").textContent = materialSorteado;
-    document.getElementById("estampa").textContent = estampaSorteada;
-    document.getElementById("linguagem").textContent = linguagemSorteada;
-    document.getElementById("atmosfera").textContent = atmosferaSorteada;
-    document.getElementById("universo").textContent = universoSorteado;
-    document.getElementById("construcao").textContent = construcaoSorteada;
+    let resultado;
 
+    if (modoSelecionado === "livre") {
+
+        resultado = gerarLivre();
+
+    } else {
+
+        resultado = {
+            modo: modoSelecionado
+        };
+
+    }
+
+    mostrarResultado(resultado);
 
 });
