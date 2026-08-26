@@ -464,11 +464,20 @@ function ativarRefresh() {
 
     document.getElementById("refresh-tema").onclick = function() {
 
-        const atual = camposResultado.tema.textContent;
+    const atual = camposResultado.tema.textContent;
+
+    if (modoSelecionado === "caos") {
+
+        camposResultado.tema.textContent =
+            sortearMultiplosDiferentes(temas, 2, atual);
+
+    } else {
 
         camposResultado.tema.textContent =
             sortearDiferente(temas, atual);
-    };
+
+    }
+};
 
 
     // ===== COR PRINCIPAL =====
