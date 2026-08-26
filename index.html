@@ -3,137 +3,210 @@
 
 <head>
     <title>Collection Generator</title>
-    
+
+    <!-- ===== FONTES ===== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ===== CSS ===== -->
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+
+    <!-- =====================================================
+         TÍTULO
+         ===================================================== -->
 
     <h1>COLLECTION GENERATOR</h1>
 
-    <p>Um gerador aleatório de direções criativas para criação de moda.</p>
+    <p>
+        Um gerador aleatório de direções criativas para criação de moda.
+    </p>
 
+
+    <!-- =====================================================
+         ESCOLHA DO MODO
+         ===================================================== -->
 
     <h2>O QUE VOCÊ QUER GERAR?</h2>
 
-    <p><strong>Modo de criação</strong></p>
+    <p>
+        <strong>Modo de criação</strong>
+    </p>
+
+
+    <!-- =====================================================
+         MODOS
+         ===================================================== -->
 
     <div class="modos">
 
-       <div class="modos">
+        <!-- ===== LIVRE ===== -->
 
-    <button id="modo-livre">
-        <strong>LIVRE</strong><br>
-        Tudo pode entrar.
-    </button>
+        <button id="modo-livre">
+            <strong>LIVRE</strong>
+            <span>Tudo pode entrar.</span>
+        </button>
 
-    <button id="modo-ideia">
-        <strong>IDEIA</strong><br>
-        Uma ideia simples para começar.
-    </button>
 
-    <button id="modo-conceito">
-        <strong>CONCEITO</strong><br>
-        Uma direção criativa mais construída.
-    </button>
+        <!-- ===== IDEIA ===== -->
 
-    <button id="modo-imersao">
-        <strong>IMERSÃO</strong><br>
-        Um briefing aprofundado.
-    </button>
+        <button id="modo-ideia">
+            <strong>IDEIA</strong>
+            <span>Uma ideia simples para começar.</span>
+        </button>
 
-    <button id="modo-estampa">
-        <strong>ESTAMPA</strong><br>
-        Direcionado exclusivamente para criação de estampas.
-    </button>
 
-    <button id="modo-caos">
-        <strong>CAOS</strong><br>
-        Complexidade máxima.
-    </button>
+        <!-- ===== CONCEITO ===== -->
 
-</div>
+        <button id="modo-conceito">
+            <strong>CONCEITO</strong>
+            <span>Uma direção criativa mais construída.</span>
+        </button>
+
+
+        <!-- ===== IMERSÃO ===== -->
+
+        <button id="modo-imersao">
+            <strong>IMERSÃO</strong>
+            <span>Um briefing aprofundado.</span>
+        </button>
+
+
+        <!-- ===== ESTAMPA ===== -->
+
+        <button id="modo-estampa">
+            <strong>ESTAMPA</strong>
+            <span>Direcionado exclusivamente para criação de estampas.</span>
+        </button>
+
+
+        <!-- ===== CAOS ===== -->
+
+        <button id="modo-caos">
+            <strong>CAOS</strong>
+            <span>Complexidade máxima.</span>
+        </button>
 
     </div>
 
 
     <br>
 
-    <button id="gerar">🎲 GERAR</button>
 
+    <!-- =====================================================
+         BOTÃO GERAR
+         ===================================================== -->
+
+    <button id="gerar">
+        🎲 GERAR
+    </button>
+
+
+    <!-- =====================================================
+         RESULTADO
+         ===================================================== -->
 
     <h2>Resultado</h2>
 
+
     <p id="resultado-modo">
-    Modo: <span id="modo"></span>
-</p>
+        Modo: <span id="modo"></span>
+    </p>
 
-<p id="resultado-tema">
-    Tema: <span id="tema"></span>
-    <button class="refresh" id="refresh-tema">🔄</button>
-</p>
 
-<p id="resultado-cor">
-    Cor principal: <span id="cor"></span>
-    <button class="refresh" id="refresh-cor">🔄</button>
-</p>
+    <p id="resultado-tema">
+        Tema: <span id="tema"></span>
+        <button class="refresh" id="refresh-tema">🔄</button>
+    </p>
 
-<p id="resultado-cor-secundaria">
-    Cor secundária: <span id="cor-secundaria"></span>
-    <button class="refresh" id="refresh-cor-secundaria">🔄</button>
-</p>
 
-<p id="resultado-material">
-    Material: <span id="material"></span>
-    <button class="refresh" id="refresh-material">🔄</button>
-</p>
+    <p id="resultado-cor">
+        Cor principal: <span id="cor"></span>
+        <button class="refresh" id="refresh-cor">🔄</button>
+    </p>
 
-<p id="resultado-estampa">
-    Estampa: <span id="estampa"></span>
-    <button class="refresh" id="refresh-estampa">🔄</button>
-</p>
 
-<p id="resultado-linguagem">
-    Linguagem: <span id="linguagem"></span>
-    <button class="refresh" id="refresh-linguagem">🔄</button>
-</p>
+    <p id="resultado-cor-secundaria">
+        Cor secundária: <span id="cor-secundaria"></span>
+        <button class="refresh" id="refresh-cor-secundaria">🔄</button>
+    </p>
 
-<p id="resultado-atmosfera">
-    Atmosfera: <span id="atmosfera"></span>
-    <button class="refresh" id="refresh-atmosfera">🔄</button>
-</p>
 
-<p id="resultado-universo">
-    Universo: <span id="universo"></span>
-    <button class="refresh" id="refresh-universo">🔄</button>
-</p>
+    <p id="resultado-material">
+        Material: <span id="material"></span>
+        <button class="refresh" id="refresh-material">🔄</button>
+    </p>
 
-<p id="resultado-construcao">
-    Construção: <span id="construcao"></span>
-    <button class="refresh" id="refresh-construcao">🔄</button>
-</p>
 
-<div id="anotacao-container">
+    <p id="resultado-estampa">
+        Estampa: <span id="estampa"></span>
+        <button class="refresh" id="refresh-estampa">🔄</button>
+    </p>
 
-    <h3>Sua ideia</h3>
 
-    <textarea
-        id="anotacao"
-        placeholder="Escreva aqui sua interpretação, referências ou ideias para desenvolver este resultado..."
-    ></textarea>
+    <p id="resultado-linguagem">
+        Linguagem: <span id="linguagem"></span>
+        <button class="refresh" id="refresh-linguagem">🔄</button>
+    </p>
 
-    <div class="acoes-anotacao">
-        <button id="copiar-resultado">
-            📋 COPIAR RESULTADO
-        </button>
+
+    <p id="resultado-atmosfera">
+        Atmosfera: <span id="atmosfera"></span>
+        <button class="refresh" id="refresh-atmosfera">🔄</button>
+    </p>
+
+
+    <p id="resultado-universo">
+        Universo: <span id="universo"></span>
+        <button class="refresh" id="refresh-universo">🔄</button>
+    </p>
+
+
+    <p id="resultado-construcao">
+        Construção: <span id="construcao"></span>
+        <button class="refresh" id="refresh-construcao">🔄</button>
+    </p>
+
+
+    <!-- =====================================================
+         ANOTAÇÃO
+         ===================================================== -->
+
+    <div id="anotacao-container">
+
+        <h3>Sua ideia</h3>
+
+        <textarea
+            id="anotacao"
+            placeholder="Escreva aqui sua interpretação, referências ou ideias para desenvolver este resultado..."
+        ></textarea>
+
+
+        <div class="acoes-anotacao">
+
+            <button id="copiar-resultado">
+                📋 COPIAR RESULTADO
+            </button>
+
+        </div>
+
     </div>
 
-</div>
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
     <script src="script.js"></script>
 
 </body>
