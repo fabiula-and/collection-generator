@@ -429,6 +429,35 @@ function gerarConceito() {
     };
 }
 
+// ===== IMERSÃO =====
+
+function gerarImersao() {
+
+    const materiaisSorteados = sortearVarios(materiais, 2);
+
+    return {
+        modo: "Imersão",
+
+        tema: sortear(temas),
+
+        cor: sortear(cores),
+
+        corSecundaria: sortear(coresSecundarias),
+
+        material: materiaisSorteados.join(" + "),
+
+        estampa: sortear(estampas),
+
+        linguagem: sortear(linguagens),
+
+        atmosfera: sortear(atmosferas),
+
+        universo: sortear(universos),
+
+        construcao: sortear(construcoes)
+    };
+}
+
 // ===== GERAR =====
 
 document.getElementById("gerar").addEventListener("click", function() {
@@ -448,6 +477,10 @@ document.getElementById("gerar").addEventListener("click", function() {
 } else if (modoSelecionado === "conceito") {
 
     resultado = gerarConceito();
+
+} else if (modoSelecionado === "imersao") {
+
+    resultado = gerarImersao();
 
 } else {
 
