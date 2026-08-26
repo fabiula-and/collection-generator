@@ -377,10 +377,10 @@ body > h2 {
    ========================================================= */
 
 #titulo-modos {
-    margin-left: 60px;
+    margin-left: 40px;
     /* Distância da esquerda */
 
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     /* Espaço entre o título e os botões */
 
     font-family: "Space Grotesk", sans-serif;
