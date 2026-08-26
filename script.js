@@ -9,3 +9,5 @@ const temas = [
 const temaSorteado = temas[Math.floor(Math.random() * temas.length)];
 
 console.log(temaSorteado);
+
+document.getElementById("tema").textContent = temaSorteado;
