@@ -496,3 +496,117 @@ body > h2 {
 
     cursor: pointer;
 }
+
+/* =========================================================
+   RODAPÉ / ASSINATURA
+   ========================================================= */
+
+.rodape {
+
+    margin: 80px 30px 25px 30px;
+    /* Espaço entre a ferramenta e o rodapé */
+
+    padding-top: 18px;
+    /* Pequeno espaço acima da assinatura */
+
+    border-top: 1px solid #111111;
+    /* Linha de fechamento */
+
+    display: flex;
+
+    justify-content: space-between;
+    /* Assinatura à esquerda
+       redes à direita */
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   ASSINATURA
+   ========================================================= */
+
+.assinatura {
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+    /* Bem pequeno e discreto */
+
+    font-weight: 500;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
+
+.redes-sociais {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+    /* Espaço pequeno entre os ícones */
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.redes-sociais a {
+
+    width: 18px;
+
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* =========================================================
+   ÍCONES
+   ========================================================= */
+
+.redes-sociais svg {
+
+    width: 15px;
+
+    height: 15px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.redes-sociais a:hover {
+
+    transform: translateY(-2px);
+}
