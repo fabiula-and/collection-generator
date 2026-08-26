@@ -331,6 +331,9 @@ document.getElementById("gerar").addEventListener("click", function() {
     const linguagemSorteada = linguagens[
     Math.floor(Math.random() * linguagens.length)
 ];
+    const atmosferaSorteada = atmosferas[
+    Math.floor(Math.random() * atmosferas.length)
+];
 
     document.getElementById("tema").textContent = temaSorteado;
     document.getElementById("cor").textContent = corSorteada;
@@ -338,6 +341,7 @@ document.getElementById("gerar").addEventListener("click", function() {
     document.getElementById("material").textContent = materialSorteado;
     document.getElementById("estampa").textContent = estampaSorteada;
     document.getElementById("linguagem").textContent = linguagemSorteada;
+    document.getElementById("atmosfera").textContent = atmosferaSorteada;
 
 
 });
