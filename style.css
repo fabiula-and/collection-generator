@@ -20,7 +20,7 @@ textarea {
 
 h1 {
     font-family: "Archivo Black", sans-serif;
-    font-size: clamp(70px, 11vw, 180px);
+    font-size: clamp(65px, 9vw, 160px);
     line-height: 0.85;
     letter-spacing: -0.06em;
     margin: 0 0 40px 0;
