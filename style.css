@@ -213,6 +213,9 @@ body > h2 {
     line-height: 1;
     /* Altura da linha do título */
 
+    height: 28px;
+    /* Reserva exatamente o mesmo espaço
+       para o título de todos os botões */
 
     margin-bottom: 8px;
     /* Espaço entre o título e a descrição */
