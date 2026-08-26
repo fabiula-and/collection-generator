@@ -27,9 +27,18 @@ h1 {
     text-transform: uppercase;
 }
 
+body > h2 {
+    margin-left: 30px;
+    margin-top: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
 body > p {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.5;
     max-width: none;
     margin: 0 0 80px 30px;
