@@ -267,6 +267,17 @@ function sortear(lista) {
     return lista[Math.floor(Math.random() * lista.length)];
 }
 
+function sortearDiferente(lista, valorAtual) {
+
+    let novoValor = sortear(lista);
+
+    while (novoValor === valorAtual) {
+        novoValor = sortear(lista);
+    }
+
+    return novoValor;
+}
+
 function sortearVarios(lista, quantidade) {
     const copia = [...lista];
     const resultado = [];
