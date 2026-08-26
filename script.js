@@ -442,14 +442,14 @@ function mostrarResultado(resultado) {
     camposResultado.universo.textContent = resultado.universo || "";
     camposResultado.construcao.textContent = resultado.construcao || "";
 
-        if (modoSelecionado === "livre") {
-        ativarRefreshLivre();
-    }
+       ativarRefresh();
 }
 
 // ===== REFRESH DAS CATEGORIAS =====
 
-function ativarRefreshLivre() {
+function ativarRefresh() {
+
+    // ===== TEMA =====
 
     document.getElementById("refresh-tema").onclick = function() {
 
@@ -460,6 +460,8 @@ function ativarRefreshLivre() {
     };
 
 
+    // ===== COR PRINCIPAL =====
+
     document.getElementById("refresh-cor").onclick = function() {
 
         const atual = camposResultado.cor.textContent;
@@ -468,6 +470,8 @@ function ativarRefreshLivre() {
             sortearDiferente(cores, atual);
     };
 
+
+    // ===== COR SECUNDÁRIA =====
 
     document.getElementById("refresh-cor-secundaria").onclick = function() {
 
@@ -478,6 +482,8 @@ function ativarRefreshLivre() {
     };
 
 
+    // ===== MATERIAL =====
+
     document.getElementById("refresh-material").onclick = function() {
 
         const atual = camposResultado.material.textContent;
@@ -486,6 +492,8 @@ function ativarRefreshLivre() {
             sortearDiferente(materiais, atual);
     };
 
+
+    // ===== ESTAMPA =====
 
     document.getElementById("refresh-estampa").onclick = function() {
 
@@ -496,6 +504,8 @@ function ativarRefreshLivre() {
     };
 
 
+    // ===== LINGUAGEM =====
+
     document.getElementById("refresh-linguagem").onclick = function() {
 
         const atual = camposResultado.linguagem.textContent;
@@ -504,6 +514,8 @@ function ativarRefreshLivre() {
             sortearDiferente(linguagens, atual);
     };
 
+
+    // ===== ATMOSFERA =====
 
     document.getElementById("refresh-atmosfera").onclick = function() {
 
@@ -514,6 +526,8 @@ function ativarRefreshLivre() {
     };
 
 
+    // ===== UNIVERSO =====
+
     document.getElementById("refresh-universo").onclick = function() {
 
         const atual = camposResultado.universo.textContent;
@@ -522,6 +536,8 @@ function ativarRefreshLivre() {
             sortearDiferente(universos, atual);
     };
 
+
+    // ===== CONSTRUÇÃO =====
 
     document.getElementById("refresh-construcao").onclick = function() {
 
