@@ -328,12 +328,16 @@ document.getElementById("gerar").addEventListener("click", function() {
     const estampaSorteada = estampas[
     Math.floor(Math.random() * estampas.length)
 ];
+    const linguagemSorteada = linguagens[
+    Math.floor(Math.random() * linguagens.length)
+];
 
     document.getElementById("tema").textContent = temaSorteado;
     document.getElementById("cor").textContent = corSorteada;
     document.getElementById("cor-secundaria").textContent = corSecundariaSorteada;
     document.getElementById("material").textContent = materialSorteado;
     document.getElementById("estampa").textContent = estampaSorteada;
+    document.getElementById("linguagem").textContent = linguagemSorteada;
 
 
 });
