@@ -205,6 +205,31 @@ const universos = [
     "Vida suburbana"
 ];
 
+const construcoes = [
+    "Oversized",
+    "Ajustada",
+    "Estruturada",
+    "Fluida",
+    "Volumosa",
+    "Alongada",
+    "Encurtada",
+    "Assimétrica",
+    "Ampulheta",
+    "Colunar",
+    "Triangular",
+    "Trapézio",
+    "Cocoon",
+    "Balonê",
+    "Boxy",
+    "Bodycon",
+    "Desconstruída",
+    "Arquitetônica",
+    "Inflada",
+    "Drapejada",
+    "Escultural",
+    "Exagerada"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
