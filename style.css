@@ -114,8 +114,9 @@ body > h2 {
     grid-template-columns: repeat(3, 1fr);
     /* 3 colunas de mesmo tamanho */
 
-    gap: 18px;
-    /* Espaço entre os cartões */
+    gap: 6px;
+    /* Espaço entre os botões
+   tanto na horizontal quanto na vertical */
 
     width: calc(100% - 60px);
     /* Largura da grade */
