@@ -406,6 +406,29 @@ function gerarIdeia() {
     };
 }
 
+// ===== CONCEITO =====
+
+function gerarConceito() {
+
+    return {
+        modo: "Conceito",
+
+        tema: sortear(temas),
+
+        cor: sortear(cores),
+
+        corSecundaria: sortear(coresSecundarias),
+
+        material: sortear(materiais),
+
+        linguagem: sortear(linguagens),
+
+        universo: sortear(universos),
+
+        construcao: sortear(construcoes)
+    };
+}
+
 // ===== GERAR =====
 
 document.getElementById("gerar").addEventListener("click", function() {
@@ -421,6 +444,10 @@ document.getElementById("gerar").addEventListener("click", function() {
 } else if (modoSelecionado === "ideia") {
 
     resultado = gerarIdeia();
+
+} else if (modoSelecionado === "conceito") {
+
+    resultado = gerarConceito();
 
 } else {
 
