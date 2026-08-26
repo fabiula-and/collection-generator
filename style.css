@@ -400,3 +400,27 @@ body > h2 {
     line-height: 1.2;
     /* Altura da linha */
 }
+
+/* =========================================================
+   TÍTULO RESULTADO
+   ========================================================= */
+
+#titulo-resultado {
+    margin-left: 30px;
+    /* Alinhamento com a seção anterior */
+
+    margin-top: 0;
+    /* Espaço acima do título */
+
+    margin-bottom: 30px;
+    /* Espaço entre RESULTADO e os campos */
+
+    font-family: "Archivo Black", sans-serif;
+    /* Fonte do título */
+
+    font-size: 35px;
+    /* Tamanho do título */
+
+    text-transform: uppercase;
+    /* RESULTADO em caixa alta */
+}
