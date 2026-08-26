@@ -480,6 +480,38 @@ function gerarEstampa() {
     };
 }
 
+// ===== CAOS =====
+
+function gerarCaos() {
+
+    const temasSorteados = sortearVarios(temas, 2);
+    const coresSorteadas = sortearVarios(cores, 2);
+    const materiaisSorteados = sortearVarios(materiais, 3);
+    const construcoesSorteadas = sortearVarios(construcoes, 2);
+
+    return {
+        modo: "Caos",
+
+        tema: temasSorteados.join(" + "),
+
+        cor: coresSorteadas.join(" + "),
+
+        corSecundaria: sortear(coresSecundarias),
+
+        material: materiaisSorteados.join(" + "),
+
+        estampa: sortear(estampas),
+
+        linguagem: sortear(linguagens),
+
+        atmosfera: sortear(atmosferas),
+
+        universo: sortear(universos),
+
+        construcao: construcoesSorteadas.join(" + ")
+    };
+}
+
 // ===== GERAR =====
 
 document.getElementById("gerar").addEventListener("click", function() {
@@ -507,6 +539,10 @@ document.getElementById("gerar").addEventListener("click", function() {
 } else if (modoSelecionado === "estampa") {
 
     resultado = gerarEstampa();
+
+} else if (modoSelecionado === "caos") {
+
+    resultado = gerarCaos();
 
 } else {
 
