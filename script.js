@@ -296,6 +296,105 @@ const camposResultado = {
     construcao: document.getElementById("construcao")
 };
 
+// ===== VISIBILIDADE DO RESULTADO =====
+
+const linhasResultado = {
+    tema: document.getElementById("resultado-tema"),
+    cor: document.getElementById("resultado-cor"),
+    corSecundaria: document.getElementById("resultado-cor-secundaria"),
+    material: document.getElementById("resultado-material"),
+    estampa: document.getElementById("resultado-estampa"),
+    linguagem: document.getElementById("resultado-linguagem"),
+    atmosfera: document.getElementById("resultado-atmosfera"),
+    universo: document.getElementById("resultado-universo"),
+    construcao: document.getElementById("resultado-construcao")
+};
+
+
+function atualizarVisibilidadeResultado(modo) {
+
+    const categoriasVisiveis = {
+
+        livre: [
+            "tema",
+            "cor",
+            "corSecundaria",
+            "material",
+            "estampa",
+            "linguagem",
+            "atmosfera",
+            "universo",
+            "construcao"
+        ],
+
+        ideia: [
+            "tema",
+            "cor",
+            "corSecundaria",
+            "material",
+            "linguagem",
+            "atmosfera"
+        ],
+
+        conceito: [
+            "tema",
+            "cor",
+            "corSecundaria",
+            "material",
+            "linguagem",
+            "universo",
+            "construcao"
+        ],
+
+        imersao: [
+            "tema",
+            "cor",
+            "corSecundaria",
+            "material",
+            "estampa",
+            "linguagem",
+            "atmosfera",
+            "universo",
+            "construcao"
+        ],
+
+        estampa: [
+            "tema",
+            "cor",
+            "corSecundaria",
+            "estampa",
+            "atmosfera",
+            "universo"
+        ],
+
+        caos: [
+            "tema",
+            "cor",
+            "corSecundaria",
+            "material",
+            "estampa",
+            "linguagem",
+            "atmosfera",
+            "universo",
+            "construcao"
+        ]
+    };
+
+
+    Object.keys(linhasResultado).forEach(function(categoria) {
+
+        if (categoriasVisiveis[modo].includes(categoria)) {
+
+            linhasResultado[categoria].style.display = "";
+
+        } else {
+
+            linhasResultado[categoria].style.display = "none";
+
+        }
+
+    });
+}
 
 // ===== LIMPAR RESULTADO =====
 
@@ -318,6 +417,8 @@ function limparResultado() {
 function mostrarResultado(resultado) {
 
     limparResultado();
+
+    atualizarVisibilidadeResultado(modoSelecionado);
 
     camposResultado.modo.textContent = resultado.modo || "";
     camposResultado.tema.textContent = resultado.tema || "";
