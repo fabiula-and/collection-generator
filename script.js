@@ -170,6 +170,20 @@ const estampas = [
     "Maxi-estampa"
 ];
 
+const linguagens = [
+    "Futurista",
+    "Tecnológico",
+    "Cyberpunk",
+    "Kitsch",
+    "Minimalismo",
+    "Maximalismo",
+    "Glamour",
+    "Fetiche",
+    "Luxuoso",
+    "Artesanal",
+    "Industrial"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
