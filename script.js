@@ -184,6 +184,16 @@ const linguagens = [
     "Industrial"
 ];
 
+const atmosferas = [
+    "Nostálgico",
+    "Decadente",
+    "Eufórico",
+    "Melancólico",
+    "Onírico",
+    "Perturbador",
+    "Romântico"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
