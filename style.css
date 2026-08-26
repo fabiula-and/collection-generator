@@ -96,7 +96,7 @@ body > p {
 body > h2 {
     margin: 0 0 25px 30px;
     /*
-       30px = deslocamento para a direita
+       30px = esquerda
        25px = espaço abaixo
     */
 
@@ -116,7 +116,7 @@ body > h2 {
     /* Distância da esquerda */
 
     margin-bottom: 35px;
-    /* Espaço entre o título e os botões */
+    /* Espaço entre o texto e os botões */
 
     font-family: "Space Grotesk", sans-serif;
 
@@ -328,8 +328,8 @@ body > h2 {
    ========================================================= */
 
 /*
-   Todos os campos do resultado começam
-   no mesmo alinhamento.
+   Aqui começa a ficha de direção criativa.
+   Cada informação ocupa uma linha.
 */
 
 #resultado-modo,
@@ -350,19 +350,21 @@ body > h2 {
     /* Respiro do lado direito */
 
     margin-bottom: 0;
-    /* O espaçamento será controlado individualmente */
 
     padding: 18px 0;
-    /* Espaço em cima e embaixo */
+    /* Espaço acima e abaixo de cada informação */
 
     border-bottom: 1px solid #111111;
-    /* Linha divisória entre informações */
+    /* Linha divisória */
 
     font-family: "IBM Plex Mono", monospace;
-    /* Fonte técnica das categorias */
+    /* Fonte técnica */
 
     font-size: 12px;
-    /* Tamanho das categorias */
+    /* Tamanho da categoria */
+
+    font-weight: 700;
+    /* CATEGORIA EM NEGRITO */
 
     line-height: 1.4;
 
@@ -371,13 +373,13 @@ body > h2 {
 
 
 /* =========================================================
-   PRIMEIRO ITEM DA FICHA — MODO
+   PRIMEIRO ITEM — MODO
    ========================================================= */
 
 #resultado-modo {
 
     padding-top: 0;
-    /* Evita espaço desnecessário no topo */
+    /* Remove espaço desnecessário no topo */
 
     margin-bottom: 10px;
 }
@@ -399,13 +401,18 @@ body > h2 {
     font-size: 28px;
     /* Tamanho do modo */
 
+    font-weight: 400;
+    /* O valor não fica em negrito adicional */
+
     line-height: 1;
+
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
    VALORES DOS RESULTADOS
-   Tema, cor, material, etc.
+   Tema, cor, material etc.
    ========================================================= */
 
 #resultado-tema #tema,
@@ -419,7 +426,7 @@ body > h2 {
 #resultado-construcao #construcao {
 
     display: inline-block;
-    /* Mantém o valor junto da categoria */
+    /* Mantém o resultado na mesma linha */
 
     margin-left: 15px;
     /* Espaço entre categoria e resultado */
@@ -430,10 +437,10 @@ body > h2 {
     font-size: 22px;
     /* Resultado maior que a categoria */
 
-    font-weight: 500;
+    font-weight: 400;
+    /* RESULTADO NORMAL, SEM NEGRITO */
 
     text-transform: none;
-    /* Mantém o texto sorteado como foi gerado */
 }
 
 
@@ -447,10 +454,10 @@ body > h2 {
     /* Sem fundo */
 
     color: #111111;
-    /* Ícone preto */
+    /* Cor definida para o botão */
 
     border: none;
-    /* Remove borda padrão */
+    /* Sem borda */
 
     border-radius: 0;
 
@@ -460,10 +467,10 @@ body > h2 {
     /* Tamanho do símbolo */
 
     padding: 2px 5px;
-    /* Espaço ao redor do símbolo */
+    /* Espaço ao redor */
 
     appearance: none;
-    /* Remove aparência padrão do navegador */
+    /* Remove aparência padrão */
 
     vertical-align: middle;
     /* Alinha com o resultado */
@@ -481,7 +488,9 @@ body > h2 {
 }
 
 
-/* Título "Sua ideia" */
+/* =========================================================
+   TÍTULO "SUA IDEIA"
+   ========================================================= */
 
 #anotacao-container h3 {
 
@@ -493,7 +502,9 @@ body > h2 {
 }
 
 
-/* Caixa de texto */
+/* =========================================================
+   CAIXA DE TEXTO
+   ========================================================= */
 
 #anotacao {
 
@@ -525,7 +536,9 @@ body > h2 {
 }
 
 
-/* Botão de copiar */
+/* =========================================================
+   BOTÃO DE COPIAR
+   ========================================================= */
 
 #copiar-resultado {
 
