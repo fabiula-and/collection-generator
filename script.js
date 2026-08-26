@@ -58,6 +58,8 @@ botoesEscala.forEach(function(botao) {
 
         console.log("Escala escolhida:", escalaSelecionada);
 
+        document.getElementById("escala").textContent = escalaSelecionada;
+
     });
 
 });
