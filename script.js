@@ -6,8 +6,10 @@ const temas = [
     "Hospital"
 ];
 
-const temaSorteado = temas[Math.floor(Math.random() * temas.length)];
+document.getElementById("gerar").addEventListener("click", function() {
 
-console.log(temaSorteado);
+    const temaSorteado = temas[Math.floor(Math.random() * temas.length)];
 
-document.getElementById("tema").textContent = temaSorteado;
+    document.getElementById("tema").textContent = temaSorteado;
+
+});
