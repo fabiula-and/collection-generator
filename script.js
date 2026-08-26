@@ -1,3 +1,7 @@
+/* =========================================================
+   LISTAS DE CONTEÚDO
+   ========================================================= */
+
 const temas = [
     "Romantismo",
     "Infantil",
@@ -70,6 +74,7 @@ const temas = [
     "Férias escolares"
 ];
 
+
 const cores = [
     "Rosa + verde",
     "Laranja + roxo",
@@ -109,6 +114,7 @@ const cores = [
     "Holográfico / Furtacor"
 ];
 
+
 const materiais = [
     "Plástico",
     "Vinil",
@@ -136,6 +142,7 @@ const materiais = [
     "Translúcido",
     "Espelhado"
 ];
+
 
 const estampas = [
     "Floral",
@@ -170,6 +177,7 @@ const estampas = [
     "Maxi-estampa"
 ];
 
+
 const linguagens = [
     "Futurista",
     "Tecnológico",
@@ -184,6 +192,7 @@ const linguagens = [
     "Industrial"
 ];
 
+
 const atmosferas = [
     "Nostálgico",
     "Decadente",
@@ -193,6 +202,7 @@ const atmosferas = [
     "Perturbador",
     "Romântico"
 ];
+
 
 const universos = [
     "Submundo",
@@ -204,6 +214,7 @@ const universos = [
     "Pós-apocalipse",
     "Vida suburbana"
 ];
+
 
 const construcoes = [
     "Oversized",
@@ -229,6 +240,7 @@ const construcoes = [
     "Escultural",
     "Exagerada"
 ];
+
 
 const coresSecundarias = [
     "Preto",
@@ -256,16 +268,24 @@ const coresSecundarias = [
 ];
 
 
-// ===== ESTADO =====
+/* =========================================================
+   ESTADO DO GERADOR
+   ========================================================= */
 
 let modoSelecionado = "livre";
 
 
-// ===== FUNÇÕES DE SORTEIO =====
+/* =========================================================
+   FUNÇÕES DE SORTEIO
+   ========================================================= */
 
 function sortear(lista) {
-    return lista[Math.floor(Math.random() * lista.length)];
+
+    return lista[
+        Math.floor(Math.random() * lista.length)
+    ];
 }
+
 
 function sortearDiferente(lista, valorAtual) {
 
@@ -278,24 +298,44 @@ function sortearDiferente(lista, valorAtual) {
     return novoValor;
 }
 
-function sortearMultiplosDiferentes(lista, quantidade, valorAtual) {
+
+function sortearMultiplosDiferentes(
+    lista,
+    quantidade,
+    valorAtual
+) {
 
     let novosValores;
 
     do {
-        novosValores = sortearVarios(lista, quantidade);
-    } while (novosValores.join(" + ") === valorAtual);
+
+        novosValores = sortearVarios(
+            lista,
+            quantidade
+        );
+
+    } while (
+        novosValores.join(" + ") === valorAtual
+    );
 
     return novosValores.join(" + ");
 }
 
+
 function sortearVarios(lista, quantidade) {
+
     const copia = [...lista];
+
     const resultado = [];
 
     for (let i = 0; i < quantidade; i++) {
-        const indice = Math.floor(Math.random() * copia.length);
+
+        const indice = Math.floor(
+            Math.random() * copia.length
+        );
+
         resultado.push(copia[indice]);
+
         copia.splice(indice, 1);
     }
 
@@ -303,35 +343,93 @@ function sortearVarios(lista, quantidade) {
 }
 
 
-// ===== ELEMENTOS DO RESULTADO =====
+/* =========================================================
+   ELEMENTOS DO RESULTADO
+   ========================================================= */
 
 const camposResultado = {
+
     modo: document.getElementById("modo"),
+
     tema: document.getElementById("tema"),
+
     cor: document.getElementById("cor"),
-    corSecundaria: document.getElementById("cor-secundaria"),
-    material: document.getElementById("material"),
-    estampa: document.getElementById("estampa"),
-    linguagem: document.getElementById("linguagem"),
-    atmosfera: document.getElementById("atmosfera"),
-    universo: document.getElementById("universo"),
-    construcao: document.getElementById("construcao")
+
+    corSecundaria:
+        document.getElementById("cor-secundaria"),
+
+    material:
+        document.getElementById("material"),
+
+    estampa:
+        document.getElementById("estampa"),
+
+    linguagem:
+        document.getElementById("linguagem"),
+
+    atmosfera:
+        document.getElementById("atmosfera"),
+
+    universo:
+        document.getElementById("universo"),
+
+    construcao:
+        document.getElementById("construcao")
 };
 
-// ===== VISIBILIDADE DO RESULTADO =====
+
+/* =========================================================
+   LINHAS VISÍVEIS DO RESULTADO
+   ========================================================= */
 
 const linhasResultado = {
-    tema: document.getElementById("resultado-tema"),
-    cor: document.getElementById("resultado-cor"),
-    corSecundaria: document.getElementById("resultado-cor-secundaria"),
-    material: document.getElementById("resultado-material"),
-    estampa: document.getElementById("resultado-estampa"),
-    linguagem: document.getElementById("resultado-linguagem"),
-    atmosfera: document.getElementById("resultado-atmosfera"),
-    universo: document.getElementById("resultado-universo"),
-    construcao: document.getElementById("resultado-construcao")
+
+    tema:
+        document.getElementById("resultado-tema"),
+
+    cor:
+        document.getElementById("resultado-cor"),
+
+    corSecundaria:
+        document.getElementById(
+            "resultado-cor-secundaria"
+        ),
+
+    material:
+        document.getElementById(
+            "resultado-material"
+        ),
+
+    estampa:
+        document.getElementById(
+            "resultado-estampa"
+        ),
+
+    linguagem:
+        document.getElementById(
+            "resultado-linguagem"
+        ),
+
+    atmosfera:
+        document.getElementById(
+            "resultado-atmosfera"
+        ),
+
+    universo:
+        document.getElementById(
+            "resultado-universo"
+        ),
+
+    construcao:
+        document.getElementById(
+            "resultado-construcao"
+        )
 };
 
+
+/* =========================================================
+   VISIBILIDADE DO RESULTADO
+   ========================================================= */
 
 function atualizarVisibilidadeResultado(modo) {
 
@@ -403,530 +501,858 @@ function atualizarVisibilidadeResultado(modo) {
     };
 
 
-    Object.keys(linhasResultado).forEach(function(categoria) {
+    Object.keys(linhasResultado).forEach(
+        function(categoria) {
 
-        if (categoriasVisiveis[modo].includes(categoria)) {
+            if (
+                categoriasVisiveis[modo]
+                .includes(categoria)
+            ) {
 
-            linhasResultado[categoria].style.display = "";
+                linhasResultado[categoria]
+                    .style.display = "";
 
-        } else {
+            } else {
 
-            linhasResultado[categoria].style.display = "none";
+                linhasResultado[categoria]
+                    .style.display = "none";
+            }
 
         }
-
-    });
+    );
 }
 
-// ===== LIMPAR RESULTADO =====
+
+/* =========================================================
+   LIMPAR RESULTADO
+   ========================================================= */
 
 function limparResultado() {
+
     camposResultado.modo.textContent = "";
+
     camposResultado.tema.textContent = "";
+
     camposResultado.cor.textContent = "";
+
     camposResultado.corSecundaria.textContent = "";
+
     camposResultado.material.textContent = "";
+
     camposResultado.estampa.textContent = "";
+
     camposResultado.linguagem.textContent = "";
+
     camposResultado.atmosfera.textContent = "";
+
     camposResultado.universo.textContent = "";
+
     camposResultado.construcao.textContent = "";
 }
 
 
-// ===== MOSTRAR RESULTADO =====
+/* =========================================================
+   MOSTRAR RESULTADO
+   ========================================================= */
 
 function mostrarResultado(resultado) {
 
     limparResultado();
 
-    atualizarVisibilidadeResultado(modoSelecionado);
+    atualizarVisibilidadeResultado(
+        modoSelecionado
+    );
 
-    camposResultado.modo.textContent = resultado.modo || "";
-    camposResultado.tema.textContent = resultado.tema || "";
-    camposResultado.cor.textContent = resultado.cor || "";
-    camposResultado.corSecundaria.textContent = resultado.corSecundaria || "";
-    camposResultado.material.textContent = resultado.material || "";
-    camposResultado.estampa.textContent = resultado.estampa || "";
-    camposResultado.linguagem.textContent = resultado.linguagem || "";
-    camposResultado.atmosfera.textContent = resultado.atmosfera || "";
-    camposResultado.universo.textContent = resultado.universo || "";
-    camposResultado.construcao.textContent = resultado.construcao || "";
+    camposResultado.modo.textContent =
+        resultado.modo || "";
 
-       ativarRefresh();
+    camposResultado.tema.textContent =
+        resultado.tema || "";
+
+    camposResultado.cor.textContent =
+        resultado.cor || "";
+
+    camposResultado.corSecundaria.textContent =
+        resultado.corSecundaria || "";
+
+    camposResultado.material.textContent =
+        resultado.material || "";
+
+    camposResultado.estampa.textContent =
+        resultado.estampa || "";
+
+    camposResultado.linguagem.textContent =
+        resultado.linguagem || "";
+
+    camposResultado.atmosfera.textContent =
+        resultado.atmosfera || "";
+
+    camposResultado.universo.textContent =
+        resultado.universo || "";
+
+    camposResultado.construcao.textContent =
+        resultado.construcao || "";
+
+    ativarRefresh();
 }
 
-// ===== REFRESH DAS CATEGORIAS =====
+
+/* =========================================================
+   REFRESH DAS CATEGORIAS
+   ========================================================= */
 
 function ativarRefresh() {
 
-    // ===== TEMA =====
 
-    document.getElementById("refresh-tema").onclick = function() {
+    /* ---------- TEMA ---------- */
 
-    const atual = camposResultado.tema.textContent;
+    document.getElementById(
+        "refresh-tema"
+    ).onclick = function() {
 
-    if (modoSelecionado === "caos") {
+        const atual =
+            camposResultado.tema.textContent;
 
-        camposResultado.tema.textContent =
-            sortearMultiplosDiferentes(temas, 2, atual);
+        if (modoSelecionado === "caos") {
 
-    } else {
+            camposResultado.tema.textContent =
+                sortearMultiplosDiferentes(
+                    temas,
+                    2,
+                    atual
+                );
 
-        camposResultado.tema.textContent =
-            sortearDiferente(temas, atual);
+        } else {
 
-    }
-};
+            camposResultado.tema.textContent =
+                sortearDiferente(
+                    temas,
+                    atual
+                );
+        }
+    };
 
 
-    // ===== COR PRINCIPAL =====
+    /* ---------- COR PRINCIPAL ---------- */
 
-    document.getElementById("refresh-cor").onclick = function() {
+    document.getElementById(
+        "refresh-cor"
+    ).onclick = function() {
 
-    const atual = camposResultado.cor.textContent;
+        const atual =
+            camposResultado.cor.textContent;
 
-    if (
-        modoSelecionado === "imersao" ||
-        modoSelecionado === "caos"
-    ) {
+        if (
+            modoSelecionado === "imersao" ||
+            modoSelecionado === "caos"
+        ) {
 
-        camposResultado.cor.textContent =
-            sortearMultiplosDiferentes(cores, 2, atual);
+            camposResultado.cor.textContent =
+                sortearMultiplosDiferentes(
+                    cores,
+                    2,
+                    atual
+                );
 
-    } else {
+        } else {
 
-        camposResultado.cor.textContent =
-            sortearDiferente(cores, atual);
+            camposResultado.cor.textContent =
+                sortearDiferente(
+                    cores,
+                    atual
+                );
+        }
+    };
 
-    }
-};
 
-    // ===== COR SECUNDÁRIA =====
+    /* ---------- COR SECUNDÁRIA ---------- */
 
-    document.getElementById("refresh-cor-secundaria").onclick = function() {
+    document.getElementById(
+        "refresh-cor-secundaria"
+    ).onclick = function() {
 
-        const atual = camposResultado.corSecundaria.textContent;
+        const atual =
+            camposResultado.corSecundaria.textContent;
 
         camposResultado.corSecundaria.textContent =
-            sortearDiferente(coresSecundarias, atual);
+            sortearDiferente(
+                coresSecundarias,
+                atual
+            );
     };
 
 
-    // ===== MATERIAL =====
+    /* ---------- MATERIAL ---------- */
 
-    document.getElementById("refresh-material").onclick = function() {
+    document.getElementById(
+        "refresh-material"
+    ).onclick = function() {
 
-    const atual = camposResultado.material.textContent;
+        const atual =
+            camposResultado.material.textContent;
 
-    if (modoSelecionado === "imersao") {
+        if (modoSelecionado === "imersao") {
 
-        camposResultado.material.textContent =
-            sortearMultiplosDiferentes(materiais, 2, atual);
+            camposResultado.material.textContent =
+                sortearMultiplosDiferentes(
+                    materiais,
+                    2,
+                    atual
+                );
 
-    } else if (modoSelecionado === "caos") {
+        } else if (
+            modoSelecionado === "caos"
+        ) {
 
-        camposResultado.material.textContent =
-            sortearMultiplosDiferentes(materiais, 3, atual);
+            camposResultado.material.textContent =
+                sortearMultiplosDiferentes(
+                    materiais,
+                    3,
+                    atual
+                );
 
-    } else {
+        } else {
 
-        camposResultado.material.textContent =
-            sortearDiferente(materiais, atual);
+            camposResultado.material.textContent =
+                sortearDiferente(
+                    materiais,
+                    atual
+                );
+        }
+    };
 
-    }
-};
-    
-    // ===== ESTAMPA =====
 
-    document.getElementById("refresh-estampa").onclick = function() {
+    /* ---------- ESTAMPA ---------- */
 
-        const atual = camposResultado.estampa.textContent;
+    document.getElementById(
+        "refresh-estampa"
+    ).onclick = function() {
+
+        const atual =
+            camposResultado.estampa.textContent;
 
         camposResultado.estampa.textContent =
-            sortearDiferente(estampas, atual);
+            sortearDiferente(
+                estampas,
+                atual
+            );
     };
 
 
-    // ===== LINGUAGEM =====
+    /* ---------- LINGUAGEM ---------- */
 
-    document.getElementById("refresh-linguagem").onclick = function() {
+    document.getElementById(
+        "refresh-linguagem"
+    ).onclick = function() {
 
-        const atual = camposResultado.linguagem.textContent;
+        const atual =
+            camposResultado.linguagem.textContent;
 
         camposResultado.linguagem.textContent =
-            sortearDiferente(linguagens, atual);
+            sortearDiferente(
+                linguagens,
+                atual
+            );
     };
 
 
-    // ===== ATMOSFERA =====
+    /* ---------- ATMOSFERA ---------- */
 
-    document.getElementById("refresh-atmosfera").onclick = function() {
+    document.getElementById(
+        "refresh-atmosfera"
+    ).onclick = function() {
 
-        const atual = camposResultado.atmosfera.textContent;
+        const atual =
+            camposResultado.atmosfera.textContent;
 
         camposResultado.atmosfera.textContent =
-            sortearDiferente(atmosferas, atual);
+            sortearDiferente(
+                atmosferas,
+                atual
+            );
     };
 
 
-    // ===== UNIVERSO =====
+    /* ---------- UNIVERSO ---------- */
 
-    document.getElementById("refresh-universo").onclick = function() {
+    document.getElementById(
+        "refresh-universo"
+    ).onclick = function() {
 
-        const atual = camposResultado.universo.textContent;
+        const atual =
+            camposResultado.universo.textContent;
 
         camposResultado.universo.textContent =
-            sortearDiferente(universos, atual);
+            sortearDiferente(
+                universos,
+                atual
+            );
     };
 
 
-    // ===== CONSTRUÇÃO =====
+    /* ---------- CONSTRUÇÃO ---------- */
 
-    document.getElementById("refresh-construcao").onclick = function() {
+    document.getElementById(
+        "refresh-construcao"
+    ).onclick = function() {
 
-    const atual = camposResultado.construcao.textContent;
+        const atual =
+            camposResultado.construcao.textContent;
 
-    if (modoSelecionado === "caos") {
+        if (modoSelecionado === "caos") {
 
-        camposResultado.construcao.textContent =
-            sortearMultiplosDiferentes(construcoes, 2, atual);
+            camposResultado.construcao.textContent =
+                sortearMultiplosDiferentes(
+                    construcoes,
+                    2,
+                    atual
+                );
 
-    } else {
+        } else {
 
-        camposResultado.construcao.textContent =
-            sortearDiferente(construcoes, atual);
-
-    }
-};
+            camposResultado.construcao.textContent =
+                sortearDiferente(
+                    construcoes,
+                    atual
+                );
+        }
+    };
 
 }
 
-// ===== MODOS =====
+
+/* =========================================================
+   BOTÕES DOS MODOS
+   ========================================================= */
 
 const botoesModo = document.querySelectorAll(
-    "#modo-livre, #modo-ideia, #modo-conceito, #modo-imersao, #modo-estampa, #modo-caos"
+    "#modo-livre, " +
+    "#modo-ideia, " +
+    "#modo-conceito, " +
+    "#modo-imersao, " +
+    "#modo-estampa, " +
+    "#modo-caos"
 );
+
 
 botoesModo.forEach(function(botao) {
 
-    botao.addEventListener("click", function() {
+    botao.addEventListener(
+        "click",
+        function() {
 
-        botoesModo.forEach(function(b) {
-            b.style.backgroundColor = "";
-            b.style.color = "";
-        });
+            botoesModo.forEach(
+                function(b) {
 
-        botao.style.backgroundColor = "#111827";
-        botao.style.color = "white";
+                    b.style.backgroundColor = "";
 
-        modoSelecionado = botao.id.replace("modo-", "");
+                    b.style.color = "";
 
-        console.log("Modo escolhido:", modoSelecionado);
-    });
+                }
+            );
+
+
+            botao.style.backgroundColor =
+                "#111827";
+
+            botao.style.color =
+                "white";
+
+
+            modoSelecionado =
+                botao.id.replace(
+                    "modo-",
+                    ""
+                );
+
+
+            console.log(
+                "Modo escolhido:",
+                modoSelecionado
+            );
+
+        }
+    );
 
 });
 
 
-// ===== SORTEIO LIVRE =====
+/* =========================================================
+   GERADOR — LIVRE
+   ========================================================= */
 
 function gerarLivre() {
 
     return {
+
         modo: "Livre",
 
         tema: sortear(temas),
 
         cor: sortear(cores),
 
-        corSecundaria: sortear(coresSecundarias),
+        corSecundaria:
+            sortear(coresSecundarias),
 
-        material: sortear(materiais),
+        material:
+            sortear(materiais),
 
-        estampa: sortear(estampas),
+        estampa:
+            sortear(estampas),
 
-        linguagem: sortear(linguagens),
+        linguagem:
+            sortear(linguagens),
 
-        atmosfera: sortear(atmosferas),
+        atmosfera:
+            sortear(atmosferas),
 
-        universo: sortear(universos),
+        universo:
+            sortear(universos),
 
-        construcao: sortear(construcoes)
+        construcao:
+            sortear(construcoes)
     };
 }
 
-// ===== IDEIA =====
+
+/* =========================================================
+   GERADOR — IDEIA
+   ========================================================= */
 
 function gerarIdeia() {
 
     return {
+
         modo: "Ideia",
 
         tema: sortear(temas),
 
         cor: sortear(cores),
 
-        corSecundaria: sortear(coresSecundarias),
+        corSecundaria:
+            sortear(coresSecundarias),
 
-        material: sortear(materiais),
+        material:
+            sortear(materiais),
 
-        linguagem: sortear(linguagens),
+        linguagem:
+            sortear(linguagens),
 
-        atmosfera: sortear(atmosferas)
+        atmosfera:
+            sortear(atmosferas)
     };
 }
 
-// ===== CONCEITO =====
+
+/* =========================================================
+   GERADOR — CONCEITO
+   ========================================================= */
 
 function gerarConceito() {
 
     return {
+
         modo: "Conceito",
 
         tema: sortear(temas),
 
         cor: sortear(cores),
 
-        corSecundaria: sortear(coresSecundarias),
+        corSecundaria:
+            sortear(coresSecundarias),
 
-        material: sortear(materiais),
+        material:
+            sortear(materiais),
 
-        linguagem: sortear(linguagens),
+        linguagem:
+            sortear(linguagens),
 
-        universo: sortear(universos),
+        universo:
+            sortear(universos),
 
-        construcao: sortear(construcoes)
+        construcao:
+            sortear(construcoes)
     };
 }
 
-// ===== IMERSÃO =====
+
+/* =========================================================
+   GERADOR — IMERSÃO
+   ========================================================= */
 
 function gerarImersao() {
 
-    const coresSorteadas = sortearVarios(cores, 2);
-    const materiaisSorteados = sortearVarios(materiais, 2);
+    const coresSorteadas =
+        sortearVarios(cores, 2);
+
+    const materiaisSorteados =
+        sortearVarios(materiais, 2);
+
 
     return {
+
         modo: "Imersão",
 
         tema: sortear(temas),
 
-        cor: coresSorteadas.join(" + "),
+        cor:
+            coresSorteadas.join(" + "),
 
-        corSecundaria: sortear(coresSecundarias),
+        corSecundaria:
+            sortear(coresSecundarias),
 
-        material: materiaisSorteados.join(" + "),
+        material:
+            materiaisSorteados.join(" + "),
 
-        estampa: sortear(estampas),
+        estampa:
+            sortear(estampas),
 
-        linguagem: sortear(linguagens),
+        linguagem:
+            sortear(linguagens),
 
-        atmosfera: sortear(atmosferas),
+        atmosfera:
+            sortear(atmosferas),
 
-        universo: sortear(universos),
+        universo:
+            sortear(universos),
 
-        construcao: sortear(construcoes)
+        construcao:
+            sortear(construcoes)
     };
 }
 
-// ===== ESTAMPA =====
+
+/* =========================================================
+   GERADOR — ESTAMPA
+   ========================================================= */
 
 function gerarEstampa() {
 
     return {
+
         modo: "Estampa",
 
         tema: sortear(temas),
 
         cor: sortear(cores),
 
-        corSecundaria: sortear(coresSecundarias),
+        corSecundaria:
+            sortear(coresSecundarias),
 
-        estampa: sortear(estampas),
+        estampa:
+            sortear(estampas),
 
-        atmosfera: sortear(atmosferas),
+        atmosfera:
+            sortear(atmosferas),
 
-        universo: sortear(universos)
+        universo:
+            sortear(universos)
     };
 }
 
-// ===== CAOS =====
+
+/* =========================================================
+   GERADOR — CAOS
+   ========================================================= */
 
 function gerarCaos() {
 
-    const temasSorteados = sortearVarios(temas, 2);
-    const coresSorteadas = sortearVarios(cores, 2);
-    const materiaisSorteados = sortearVarios(materiais, 3);
-    const construcoesSorteadas = sortearVarios(construcoes, 2);
+    const temasSorteados =
+        sortearVarios(temas, 2);
+
+    const coresSorteadas =
+        sortearVarios(cores, 2);
+
+    const materiaisSorteados =
+        sortearVarios(materiais, 3);
+
+    const construcoesSorteadas =
+        sortearVarios(construcoes, 2);
+
 
     return {
+
         modo: "Caos",
 
-        tema: temasSorteados.join(" + "),
+        tema:
+            temasSorteados.join(" + "),
 
-        cor: coresSorteadas.join(" + "),
+        cor:
+            coresSorteadas.join(" + "),
 
-        corSecundaria: sortear(coresSecundarias),
+        corSecundaria:
+            sortear(coresSecundarias),
 
-        material: materiaisSorteados.join(" + "),
+        material:
+            materiaisSorteados.join(" + "),
 
-        estampa: sortear(estampas),
+        estampa:
+            sortear(estampas),
 
-        linguagem: sortear(linguagens),
+        linguagem:
+            sortear(linguagens),
 
-        atmosfera: sortear(atmosferas),
+        atmosfera:
+            sortear(atmosferas),
 
-        universo: sortear(universos),
+        universo:
+            sortear(universos),
 
-        construcao: construcoesSorteadas.join(" + ")
+        construcao:
+            construcoesSorteadas.join(" + ")
     };
 }
 
-// ===== GERAR =====
 
-document.getElementById("gerar").addEventListener("click", function() {
+/* =========================================================
+   BOTÃO GERAR
+   ========================================================= */
 
-    console.log("Gerando modo:", modoSelecionado);
+document.getElementById(
+    "gerar"
+).addEventListener(
+    "click",
+    function() {
 
-    let resultado;
+        console.log(
+            "Gerando modo:",
+            modoSelecionado
+        );
 
-   if (modoSelecionado === "livre") {
 
-    resultado = gerarLivre();
+        let resultado;
 
-} else if (modoSelecionado === "ideia") {
 
-    resultado = gerarIdeia();
+        if (modoSelecionado === "livre") {
 
-} else if (modoSelecionado === "conceito") {
+            resultado = gerarLivre();
 
-    resultado = gerarConceito();
-
-} else if (modoSelecionado === "imersao") {
-
-    resultado = gerarImersao();
-
-} else if (modoSelecionado === "estampa") {
-
-    resultado = gerarEstampa();
-
-} else if (modoSelecionado === "caos") {
-
-    resultado = gerarCaos();
-
-} else {
-
-    resultado = {
-        modo: modoSelecionado
-    };
-
-}
-
-    mostrarResultado(resultado);
-
-});
-
-// ===== ANOTAÇÃO =====
-
-// ===== COPIAR RESULTADO =====
-
-document.getElementById("copiar-resultado").addEventListener("click", function() {
-
-    let texto = "COLLECTION GENERATOR\n\n";
-
-    texto += "Modo: " + camposResultado.modo.textContent + "\n\n";
-
-    const categorias = [
-        ["Tema", "tema"],
-        ["Cor principal", "cor"],
-        ["Cor secundária", "corSecundaria"],
-        ["Material", "material"],
-        ["Estampa", "estampa"],
-        ["Linguagem", "linguagem"],
-        ["Atmosfera", "atmosfera"],
-        ["Universo", "universo"],
-        ["Construção", "construcao"]
-    ];
-
-    categorias.forEach(function(categoria) {
-
-        const nome = categoria[0];
-        const campo = categoria[1];
-
-        if (
-            linhasResultado[campo] &&
-            linhasResultado[campo].style.display !== "none" &&
-            camposResultado[campo].textContent
+        } else if (
+            modoSelecionado === "ideia"
         ) {
 
-            texto += nome + ": " +
-                camposResultado[campo].textContent +
-                "\n";
-        }
+            resultado = gerarIdeia();
 
-    });
-
-    if (campoAnotacao.value.trim() !== "") {
-
-        texto += "\nMINHA IDEIA\n\n";
-        texto += campoAnotacao.value.trim();
-
-    }
-
-    navigator.clipboard.writeText(texto);
-
-});
-
-
-// ===== COPIAR RESULTADO =====
-
-document.getElementById("copiar-resultado").addEventListener("click", function() {
-
-    let texto = "COLLECTION GENERATOR\n\n";
-
-    texto += "Modo: " + camposResultado.modo.textContent + "\n\n";
-
-
-    const categorias = [
-        ["Tema", "tema"],
-        ["Cor principal", "cor"],
-        ["Cor secundária", "corSecundaria"],
-        ["Material", "material"],
-        ["Estampa", "estampa"],
-        ["Linguagem", "linguagem"],
-        ["Atmosfera", "atmosfera"],
-        ["Universo", "universo"],
-        ["Construção", "construcao"]
-    ];
-
-
-    categorias.forEach(function(categoria) {
-
-        const nome = categoria[0];
-        const campo = categoria[1];
-
-        if (
-            linhasResultado[campo] &&
-            linhasResultado[campo].style.display !== "none" &&
-            camposResultado[campo].textContent
+        } else if (
+            modoSelecionado === "conceito"
         ) {
 
-            texto += nome + ": " +
-                camposResultado[campo].textContent +
-                "\n";
+            resultado = gerarConceito();
+
+        } else if (
+            modoSelecionado === "imersao"
+        ) {
+
+            resultado = gerarImersao();
+
+        } else if (
+            modoSelecionado === "estampa"
+        ) {
+
+            resultado = gerarEstampa();
+
+        } else if (
+            modoSelecionado === "caos"
+        ) {
+
+            resultado = gerarCaos();
+
+        } else {
+
+            resultado = {
+
+                modo: modoSelecionado
+
+            };
         }
 
-    });
 
-
-    if (campoAnotacao.value.trim() !== "") {
-
-        texto += "\nMINHA IDEIA\n\n";
-        texto += campoAnotacao.value.trim();
+        mostrarResultado(resultado);
 
     }
+);
 
 
-    navigator.clipboard.writeText(texto);
+/* =========================================================
+   ANOTAÇÃO
+   ========================================================= */
 
-});
+/*
+   Pegamos a caixa de texto uma única vez
+   para poder usar seu conteúdo ao copiar.
+*/
+
+const campoAnotacao =
+    document.getElementById("anotacao");
+
+
+/* =========================================================
+   COPIAR RESULTADO
+   ========================================================= */
+
+/*
+   Esta função reúne:
+   - modo
+   - categorias visíveis
+   - resultados sorteados
+   - anotação do usuário
+*/
+
+document.getElementById(
+    "copiar-resultado"
+).addEventListener(
+    "click",
+    async function() {
+
+        let texto =
+            "COLLECTION GENERATOR\n\n";
+
+
+        /* ---------- MODO ---------- */
+
+        texto +=
+            "Modo: " +
+            camposResultado.modo.textContent +
+            "\n\n";
+
+
+        /* ---------- CATEGORIAS ---------- */
+
+        const categorias = [
+
+            ["Tema", "tema"],
+
+            ["Cor principal", "cor"],
+
+            ["Cor secundária", "corSecundaria"],
+
+            ["Material", "material"],
+
+            ["Estampa", "estampa"],
+
+            ["Linguagem", "linguagem"],
+
+            ["Atmosfera", "atmosfera"],
+
+            ["Universo", "universo"],
+
+            ["Construção", "construcao"]
+
+        ];
+
+
+        categorias.forEach(
+            function(categoria) {
+
+                const nome =
+                    categoria[0];
+
+                const campo =
+                    categoria[1];
+
+
+                /*
+                   Só copia campos que:
+                   1. estão visíveis
+                   2. possuem resultado
+                */
+
+                if (
+
+                    linhasResultado[campo] &&
+
+                    linhasResultado[campo]
+                        .style.display !== "none" &&
+
+                    camposResultado[campo]
+                        .textContent
+
+                ) {
+
+                    texto +=
+                        nome +
+                        ": " +
+                        camposResultado[campo]
+                            .textContent +
+                        "\n";
+                }
+
+            }
+        );
+
+
+        /* ---------- ANOTAÇÃO ---------- */
+
+        if (
+            campoAnotacao.value.trim() !== ""
+        ) {
+
+            texto +=
+                "\nMINHA IDEIA\n\n";
+
+            texto +=
+                campoAnotacao.value.trim();
+        }
+
+
+        /* =================================================
+           COPIAR PARA A ÁREA DE TRANSFERÊNCIA
+           ================================================= */
+
+        try {
+
+            await navigator.clipboard.writeText(
+                texto
+            );
+
+
+            /*
+               Feedback visual:
+               o botão muda temporariamente
+               para mostrar que funcionou.
+            */
+
+            const botao =
+                document.getElementById(
+                    "copiar-resultado"
+                );
+
+
+            const textoOriginal =
+                botao.textContent;
+
+
+            botao.textContent =
+                "✓ COPIADO!";
+
+
+            setTimeout(
+                function() {
+
+                    botao.textContent =
+                        textoOriginal;
+
+                },
+                1500
+            );
+
+
+        } catch (erro) {
+
+            /*
+               Se o navegador bloquear o acesso
+               à área de transferência.
+            */
+
+            console.error(
+                "Não foi possível copiar:",
+                erro
+            );
+
+            alert(
+                "Não foi possível copiar o resultado."
+            );
+        }
+
+    }
+);
