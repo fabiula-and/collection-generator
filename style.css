@@ -154,17 +154,19 @@ body > h2 {
 
     /* ---------- ESPAÇO INTERNO ---------- */
 
-    padding: 20px 32px;
+    padding: 10px 32px 30px 32px;
     /*
-       20px = espaço em cima e embaixo
-       32px = espaço dos lados
+       10px = espaço em cima
+       32px = espaço à direita
+       30px = espaço embaixo
+       32px = espaço à esquerda
 
-       Diminuímos o espaço vertical de 32px
-       para 20px para o conteúdo caber melhor.
+       O espaço de cima foi reduzido para
+       deixar o conteúdo um pouco mais alto.
     */
 
 
-    /* ---------- TEXTO ---------- */
+    /* ---------- TEXTO DA DESCRIÇÃO ---------- */
 
     text-align: left;
     /* Texto alinhado à esquerda */
@@ -175,7 +177,7 @@ body > h2 {
     /* Tamanho da descrição */
 
     line-height: 1.4;
-    /* Espaçamento entre linhas */
+    /* Espaçamento entre as linhas da descrição */
 
 
     /* ---------- COMPORTAMENTO ---------- */
