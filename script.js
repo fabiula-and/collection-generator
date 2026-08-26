@@ -70,6 +70,45 @@ const temas = [
     "Férias escolares"
 ];
 
+const cores = [
+    "Rosa + verde",
+    "Laranja + roxo",
+    "Amarelo + azul",
+    "Vermelho + rosa",
+    "Marrom + lilás",
+    "Verde + rosa",
+    "Azul + laranja",
+    "Bege + vermelho",
+    "Cinza + amarelo",
+    "Roxo + verde",
+    "Pastel",
+    "Neon",
+    "Primárias",
+    "Terrosos",
+    "Fluorescentes",
+    "Monocromático",
+    "Tons doces",
+    "Tons sujos",
+    "Cores bebê",
+    "Cores ácidas",
+    "Branco total",
+    "Vermelho total",
+    "Azul total",
+    "Marrom total",
+    "Rosa total",
+    "Lavanda",
+    "Coral",
+    "Turquesa",
+    "Mostarda",
+    "Pistache",
+    "Pêssego",
+    "Magenta",
+    "Ciano",
+    "Caramelo",
+    "Vinho",
+    "Holográfico / Furtacor"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
