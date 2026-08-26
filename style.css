@@ -2,7 +2,6 @@
    BASE DA PÁGINA
    ========================================================= */
 
-/* Corpo inteiro da página */
 body {
     background-color: #F2F0EA; /* Cor do fundo */
     color: #111111;             /* Cor padrão dos textos */
@@ -15,13 +14,11 @@ body {
    TIPOGRAFIA GERAL
    ========================================================= */
 
-/* Fonte dos títulos */
 h1,
 h2 {
     font-family: "Archivo Black", sans-serif;
 }
 
-/* Fonte padrão dos botões e da caixa de anotação */
 button,
 textarea {
     font-family: "Space Grotesk", sans-serif;
@@ -37,22 +34,18 @@ h1 {
     font-family: "Archivo Black", sans-serif;
 
     font-size: clamp(65px, 9vw, 120px);
-    /*
-       65px = tamanho mínimo
+    /* 65px = mínimo
        9vw = tamanho proporcional à tela
-       120px = tamanho máximo
-    */
+       120px = máximo */
 
     line-height: 0.85;
-    /* Espaçamento vertical entre linhas */
+    /* Espaçamento vertical */
 
     letter-spacing: -0.06em;
-    /* Aproxima as letras */
+    /* Espaçamento entre letras */
 
     margin: 0 0 40px 0;
-    /*
-       cima | direita | baixo | esquerda
-    */
+    /* cima | direita | baixo | esquerda */
 
     text-transform: uppercase;
 }
@@ -72,10 +65,8 @@ body > p {
     /* Espaçamento entre linhas */
 
     margin: 0 0 65px 30px;
-    /*
-       30px = deslocamento para a direita
-       80px = espaço abaixo
-    */
+    /* 30px = deslocamento para direita
+       65px = espaço abaixo */
 
     text-transform: uppercase;
 
@@ -86,20 +77,41 @@ body > p {
 
 /* =========================================================
    TÍTULOS DE SEÇÃO
-   Ex.: O QUE VOCÊ QUER GERAR?
    ========================================================= */
 
 body > h2 {
     margin: 0 0 25px 30px;
-    /*
-       30px = deslocamento para a direita
-       25px = espaço abaixo
-    */
+    /* 30px = esquerda
+       25px = espaço abaixo */
 
     font-family: "Archivo Black", sans-serif;
 
     font-size: 35px;
-    /* Tamanho do título da seção */
+    /* Tamanho do título */
+}
+
+
+/* =========================================================
+   TÍTULO "MODO DE CRIAÇÃO"
+   ========================================================= */
+
+#titulo-modos {
+    margin-left: 40px;
+    /* Distância da esquerda */
+
+    margin-bottom: 35px;
+    /* Espaço entre o texto e os botões */
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 20px;
+    /* Tamanho do texto */
+
+    font-weight: 700;
+    /* Negrito */
+
+    line-height: 1.2;
+    /* Altura da linha */
 }
 
 
@@ -112,21 +124,17 @@ body > h2 {
     /* Cria a grade */
 
     grid-template-columns: repeat(3, 1fr);
-    /* 3 colunas de mesmo tamanho */
+    /* 3 colunas iguais */
 
     gap: 6px;
-    /* Espaço entre os botões
-   tanto na horizontal quanto na vertical */
+    /* Espaço entre os botões */
 
     width: calc(100% - 60px);
     /* Largura da grade */
 
     margin: 0 30px 40px 30px;
-    /*
-       30px = esquerda
-       30px = direita
-       40px = espaço abaixo
-    */
+    /* 30px = laterais
+       40px = espaço abaixo */
 
     box-sizing: border-box;
 }
@@ -141,10 +149,10 @@ body > h2 {
     /* ---------- TAMANHO ---------- */
 
     width: 100%;
-    /* Ocupa toda a largura disponível da coluna */
+    /* Ocupa toda a coluna */
 
     height: 150px;
-    /* Altura de TODOS os botões */
+    /* Altura de todos os botões */
 
 
     /* ---------- BORDA ---------- */
@@ -153,7 +161,7 @@ body > h2 {
     /* Espessura da borda */
 
     border-radius: 0;
-    /* Cantos completamente retos */
+    /* Cantos retos */
 
 
     /* ---------- FUNDO ---------- */
@@ -166,31 +174,27 @@ body > h2 {
 
     padding: 20px 32px;
     /*
-       20px = espaço em cima e embaixo
-       32px = espaço dos lados
+       20px = cima e baixo
+       32px = esquerda e direita
     */
 
 
     /* ---------- POSICIONAMENTO ---------- */
 
     display: flex;
-    /* Permite controlar título e descrição separadamente */
 
     flex-direction: column;
-    /* Coloca título e descrição um abaixo do outro */
 
     justify-content: space-between;
     /*
-       Empurra:
-       título → para o topo
-       descrição → para o fundo
+       Título → topo
+       Descrição → fundo
     */
 
 
     /* ---------- TEXTO ---------- */
 
     text-align: left;
-    /* Tudo alinhado à esquerda */
 
     font-family: "Space Grotesk", sans-serif;
 
@@ -198,11 +202,8 @@ body > h2 {
     /* ---------- COMPORTAMENTO ---------- */
 
     box-sizing: border-box;
-    /* Inclui borda e padding dentro
-       dos 150px de altura */
 
     cursor: pointer;
-    /* Mãozinha ao passar o mouse */
 }
 
 
@@ -214,7 +215,7 @@ body > h2 {
 .modos button strong {
 
     font-family: "Archivo Black", sans-serif;
-    /* Fonte pesada */
+    /* Fonte do título */
 
     font-size: 28px;
     /* Tamanho do título */
@@ -253,20 +254,21 @@ body > h2 {
    ========================================================= */
 
 #gerar {
+
     margin-left: 30px;
-    /* Alinha o botão com os modos */
+    /* Alinha com os modos */
 
     margin-bottom: 50px;
-    /* Espaço entre o botão GERAR e "RESULTADO" */
+    /* Espaço entre GERAR e RESULTADO */
 
     padding: 18px 35px;
-    /* Espaço interno do botão */
+    /* Espaço interno */
 
     background: #111111;
     /* Fundo preto */
 
     color: #F2F0EA;
-    /* Cor do texto */
+    /* Texto off-white */
 
     border: 3px solid #111111;
 
@@ -277,8 +279,31 @@ body > h2 {
     cursor: pointer;
 }
 
+
 /* =========================================================
-   ÁREA DE RESULTADO
+   TÍTULO RESULTADO
+   ========================================================= */
+
+#titulo-resultado {
+
+    margin-left: 30px;
+    /* Alinhamento com a seção anterior */
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+    /* Espaço entre RESULTADO e os campos */
+
+    font-family: "Archivo Black", sans-serif;
+
+    font-size: 35px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ÁREA DOS RESULTADOS
    ========================================================= */
 
 #resultado-modo,
@@ -291,7 +316,9 @@ body > h2 {
 #resultado-atmosfera,
 #resultado-universo,
 #resultado-construcao {
+
     margin-left: 30px;
+    /* Alinhamento dos resultados */
 }
 
 
@@ -300,6 +327,7 @@ body > h2 {
    ========================================================= */
 
 .refresh {
+
     background: transparent;
 
     border: none;
@@ -317,12 +345,15 @@ body > h2 {
    ========================================================= */
 
 #anotacao-container {
+
     margin: 60px 30px 40px 30px;
 }
 
 
 /* Título "Sua ideia" */
+
 #anotacao-container h3 {
+
     font-family: "Archivo Black", sans-serif;
 
     font-size: 28px;
@@ -332,8 +363,11 @@ body > h2 {
 
 
 /* Caixa de texto */
+
 #anotacao {
+
     width: 100%;
+
     min-height: 180px;
 
     box-sizing: border-box;
@@ -351,16 +385,17 @@ body > h2 {
 
 
 /* =========================================================
-   ÁREA DO BOTÃO DE COPIAR
+   BOTÃO DE COPIAR
    ========================================================= */
 
 .acoes-anotacao {
+
     margin-top: 15px;
 }
 
 
-/* Botão de copiar */
 #copiar-resultado {
+
     padding: 15px 25px;
 
     background: #111111;
@@ -372,55 +407,4 @@ body > h2 {
     font-size: 15px;
 
     cursor: pointer;
-}
-
-/* =========================================================
-   TÍTULO "MODO DE CRIAÇÃO"
-   ========================================================= */
-
-#titulo-modos {
-    margin-left: 40px;
-    /* Distância da esquerda */
-
-    margin-bottom: 35px;
-    /* Espaço entre o título e os botões */
-
-    font-family: "Space Grotesk", sans-serif;
-    /* Fonte */
-
-    font-size: 20px;
-    /* Tamanho do texto */
-
-    font-weight: 700;
-    /* Deixa o texto em negrito */
-
-    line-height: 1.2;
-    /* Altura da linha */
-}
-    line-height: 1.2;
-    /* Altura da linha */
-}
-
-/* =========================================================
-   TÍTULO RESULTADO
-   ========================================================= */
-
-#titulo-resultado {
-    margin-left: 30px;
-    /* Alinhamento com a seção anterior */
-
-    margin-top: 0;
-    /* Espaço acima do título */
-
-    margin-bottom: 30px;
-    /* Espaço entre RESULTADO e os campos */
-
-    font-family: "Archivo Black", sans-serif;
-    /* Fonte do título */
-
-    font-size: 35px;
-    /* Tamanho do título */
-
-    text-transform: uppercase;
-    /* RESULTADO em caixa alta */
 }
