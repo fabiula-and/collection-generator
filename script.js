@@ -441,6 +441,96 @@ function mostrarResultado(resultado) {
     camposResultado.atmosfera.textContent = resultado.atmosfera || "";
     camposResultado.universo.textContent = resultado.universo || "";
     camposResultado.construcao.textContent = resultado.construcao || "";
+
+        if (modoSelecionado === "livre") {
+        ativarRefreshLivre();
+    }
+}
+
+// ===== REFRESH DAS CATEGORIAS =====
+
+function ativarRefreshLivre() {
+
+    document.getElementById("refresh-tema").onclick = function() {
+
+        const atual = camposResultado.tema.textContent;
+
+        camposResultado.tema.textContent =
+            sortearDiferente(temas, atual);
+    };
+
+
+    document.getElementById("refresh-cor").onclick = function() {
+
+        const atual = camposResultado.cor.textContent;
+
+        camposResultado.cor.textContent =
+            sortearDiferente(cores, atual);
+    };
+
+
+    document.getElementById("refresh-cor-secundaria").onclick = function() {
+
+        const atual = camposResultado.corSecundaria.textContent;
+
+        camposResultado.corSecundaria.textContent =
+            sortearDiferente(coresSecundarias, atual);
+    };
+
+
+    document.getElementById("refresh-material").onclick = function() {
+
+        const atual = camposResultado.material.textContent;
+
+        camposResultado.material.textContent =
+            sortearDiferente(materiais, atual);
+    };
+
+
+    document.getElementById("refresh-estampa").onclick = function() {
+
+        const atual = camposResultado.estampa.textContent;
+
+        camposResultado.estampa.textContent =
+            sortearDiferente(estampas, atual);
+    };
+
+
+    document.getElementById("refresh-linguagem").onclick = function() {
+
+        const atual = camposResultado.linguagem.textContent;
+
+        camposResultado.linguagem.textContent =
+            sortearDiferente(linguagens, atual);
+    };
+
+
+    document.getElementById("refresh-atmosfera").onclick = function() {
+
+        const atual = camposResultado.atmosfera.textContent;
+
+        camposResultado.atmosfera.textContent =
+            sortearDiferente(atmosferas, atual);
+    };
+
+
+    document.getElementById("refresh-universo").onclick = function() {
+
+        const atual = camposResultado.universo.textContent;
+
+        camposResultado.universo.textContent =
+            sortearDiferente(universos, atual);
+    };
+
+
+    document.getElementById("refresh-construcao").onclick = function() {
+
+        const atual = camposResultado.construcao.textContent;
+
+        camposResultado.construcao.textContent =
+            sortearDiferente(construcoes, atual);
+    };
+
 }
 
 
