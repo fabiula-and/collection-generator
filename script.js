@@ -319,9 +319,13 @@ document.getElementById("gerar").addEventListener("click", function() {
     
     const temaSorteado = temas[Math.floor(Math.random() * temas.length)];
     const corSorteada = cores[Math.floor(Math.random() * cores.length)];
+    const corSecundariaSorteada = coresSecundarias[
+    Math.floor(Math.random() * coresSecundarias.length)
+];
 
     document.getElementById("tema").textContent = temaSorteado;
     document.getElementById("cor").textContent = corSorteada;
+    document.getElementById("cor-secundaria").textContent = corSecundariaSorteada;
 
 
 });
