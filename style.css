@@ -17,3 +17,12 @@ button {
 textarea {
     font-family: "Space Grotesk", sans-serif;
 }
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(70px, 11vw, 180px);
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+}
