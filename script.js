@@ -230,6 +230,31 @@ const construcoes = [
     "Exagerada"
 ];
 
+const coresSecundarias = [
+    "Preto",
+    "Off-white",
+    "Branco",
+    "Cinza",
+    "Grafite",
+    "Carvão",
+    "Prata",
+    "Creme",
+    "Marfim",
+    "Bege",
+    "Areia",
+    "Taupe",
+    "Fendi",
+    "Caramelo",
+    "Marrom",
+    "Chocolate",
+    "Café",
+    "Azul-marinho",
+    "Azul-petróleo",
+    "Verde-musgo",
+    "Verde-oliva",
+    "Vinho"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
