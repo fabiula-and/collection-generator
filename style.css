@@ -371,3 +371,24 @@ body > h2 {
 
     cursor: pointer;
 }
+
+/* =========================================================
+   TÍTULO "MODO DE CRIAÇÃO"
+   ========================================================= */
+
+#titulo-modos {
+    margin-left: 60px;
+    /* Distância da esquerda */
+
+    margin-bottom: 8px;
+    /* Espaço entre o título e os botões */
+
+    font-family: "Space Grotesk", sans-serif;
+    /* Fonte */
+
+    font-size: 20px;
+    /* Tamanho do texto */
+
+    line-height: 1.2;
+    /* Altura da linha */
+}
