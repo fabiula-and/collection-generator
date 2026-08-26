@@ -7,63 +7,74 @@
 
 <body>
 
-    <h1>Collection Generator</h1>
+    <h1>COLLECTION GENERATOR</h1>
 
-    <p>Um gerador aleatório de ideias para coleções de moda.</p>
+    <p>Um gerador aleatório de direções criativas para criação de moda.</p>
 
-    <h2>🎲 Sorteio Livre</h2>
 
-<p>Tudo aleatório.</p>
+    <h2>🎲 O que você quer gerar?</h2>
 
-<button id="modo-livre">🎲 Sortear livremente</button>
+    <p><strong>Modo de criação</strong></p>
 
-<h2>✦ Modos de criação</h2>
 
-<button id="modo-ideia">🌱 Ideia</button>
-<button id="modo-estampa">🎨 Estampa</button>
-<button id="modo-mini">✨ Mini coleção</button>
-<button id="modo-completa">👗 Coleção completa</button>
-<button id="modo-caos">🌀 Caos</button>
+    <button id="modo-livre">
+        🎲 <strong>Livre</strong><br>
+        Tudo pode entrar.
+    </button>
 
-   <h2>Qual é a escala?</h2>
+    <button id="modo-ideia">
+        🌱 <strong>Ideia</strong><br>
+        Uma ideia simples para começar.
+    </button>
 
-<div class="escala-looks">
-    <button id="escala-1peca" class="escala">1 peça</button>
-    <button id="escala-1look" class="escala">1 look</button>
-    <button id="escala-3looks" class="escala">3 looks</button>
-    <button id="escala-5looks" class="escala">5 looks</button>
-    <button id="escala-8looks" class="escala">8 looks</button>
-    <button id="escala-12looks" class="escala">12 looks</button>
-    <button id="escala-15looks" class="escala">15 looks</button>
-</div>
+    <button id="modo-conceito">
+        💡 <strong>Conceito</strong><br>
+        Uma direção criativa mais construída.
+    </button>
 
-<div class="escala-estampas">
-    <button id="escala-3estampas" class="escala">3 estampas</button>
-    <button id="escala-5estampas" class="escala">5 estampas</button>
-    <button id="escala-7estampas" class="escala">7 estampas</button>
-    <button id="escala-9estampas" class="escala">9 estampas</button>
-</div>
+    <button id="modo-imersao">
+        🧠 <strong>Imersão</strong><br>
+        Um briefing aprofundado.
+    </button>
 
-<div class="escala-editorial">
-    <button id="escala-editorial" class="escala">1 editorial</button>
-</div>
+    <button id="modo-estampa">
+        🎨 <strong>Estampa</strong><br>
+        Direcionado exclusivamente para criação de estampas.
+    </button>
 
-<br>
+    <button id="modo-caos">
+        🌀 <strong>Caos</strong><br>
+        Complexidade máxima.
+    </button>
 
-<button id="gerar">🎲 GERAR</button>
+
+    <br><br>
+
+    <button id="gerar">🎲 GERAR</button>
+
 
     <h2>Resultado</h2>
 
+    <p>Modo: <span id="modo"></span></p>
+
     <p>Tema: <span id="tema"></span></p>
+
     <p>Cor principal: <span id="cor"></span></p>
+
     <p>Cor secundária: <span id="cor-secundaria"></span></p>
+
     <p>Material: <span id="material"></span></p>
+
     <p>Estampa: <span id="estampa"></span></p>
+
     <p>Linguagem: <span id="linguagem"></span></p>
+
     <p>Atmosfera: <span id="atmosfera"></span></p>
+
     <p>Universo: <span id="universo"></span></p>
+
     <p>Construção: <span id="construcao"></span></p>
-    <p>Escala: <span id="escala"></span></p>
+
 
     <script src="script.js"></script>
 
