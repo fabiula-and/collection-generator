@@ -9,10 +9,8 @@ const temas = [
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
-function selecionarEscala(valor) {
-    escalaSelecionada = valor;
-    console.log("Escala escolhida:", escalaSelecionada);
-}
+
+// ===== MODOS =====
 
 document.getElementById("modo-ideia").addEventListener("click", function() {
     modoSelecionado = "ideia";
@@ -39,53 +37,33 @@ document.getElementById("modo-caos").addEventListener("click", function() {
     console.log("Modo escolhido:", modoSelecionado);
 });
 
-document.getElementById("escala-1peca").addEventListener("click", function() {
-    selecionarEscala("1 peça");
+
+// ===== ESCALA =====
+
+const botoesEscala = document.querySelectorAll(".escala");
+
+botoesEscala.forEach(function(botao) {
+
+    botao.addEventListener("click", function() {
+
+        botoesEscala.forEach(function(b) {
+            b.style.backgroundColor = "";
+            b.style.color = "";
+        });
+
+        botao.style.backgroundColor = "#111827";
+        botao.style.color = "white";
+
+        escalaSelecionada = botao.textContent;
+
+        console.log("Escala escolhida:", escalaSelecionada);
+
+    });
+
 });
 
-document.getElementById("escala-1look").addEventListener("click", function() {
-    selecionarEscala("1 look");
-});
 
-document.getElementById("escala-3looks").addEventListener("click", function() {
-    selecionarEscala("3 looks");
-});
-
-document.getElementById("escala-5looks").addEventListener("click", function() {
-    selecionarEscala("5 looks");
-});
-
-document.getElementById("escala-8looks").addEventListener("click", function() {
-    selecionarEscala("8 looks");
-});
-
-document.getElementById("escala-12looks").addEventListener("click", function() {
-    selecionarEscala("12 looks");
-});
-
-document.getElementById("escala-15looks").addEventListener("click", function() {
-    selecionarEscala("15 looks");
-});
-
-document.getElementById("escala-3estampas").addEventListener("click", function() {
-    selecionarEscala("3 estampas");
-});
-
-document.getElementById("escala-5estampas").addEventListener("click", function() {
-    selecionarEscala("5 estampas");
-});
-
-document.getElementById("escala-7estampas").addEventListener("click", function() {
-    selecionarEscala("7 estampas");
-});
-
-document.getElementById("escala-9estampas").addEventListener("click", function() {
-    selecionarEscala("9 estampas");
-});
-
-document.getElementById("escala-editorial").addEventListener("click", function() {
-    selecionarEscala("1 editorial");
-});
+// ===== BOTÃO GERAR =====
 
 document.getElementById("gerar").addEventListener("click", function() {
 
