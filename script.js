@@ -459,6 +459,27 @@ function gerarImersao() {
     };
 }
 
+// ===== ESTAMPA =====
+
+function gerarEstampa() {
+
+    return {
+        modo: "Estampa",
+
+        tema: sortear(temas),
+
+        cor: sortear(cores),
+
+        corSecundaria: sortear(coresSecundarias),
+
+        estampa: sortear(estampas),
+
+        atmosfera: sortear(atmosferas),
+
+        universo: sortear(universos)
+    };
+}
+
 // ===== GERAR =====
 
 document.getElementById("gerar").addEventListener("click", function() {
@@ -482,6 +503,10 @@ document.getElementById("gerar").addEventListener("click", function() {
 } else if (modoSelecionado === "imersao") {
 
     resultado = gerarImersao();
+
+} else if (modoSelecionado === "estampa") {
+
+    resultado = gerarEstampa();
 
 } else {
 
