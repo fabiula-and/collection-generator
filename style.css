@@ -3,10 +3,17 @@
    ========================================================= */
 
 body {
-    background-color: #F2F0EA; /* Cor do fundo */
-    color: #111111;             /* Cor padrão dos textos */
+    background-color: #F2F0EA;
+    /* Cor de fundo da página */
+
+    color: #111111;
+    /* Cor padrão dos textos */
+
     font-family: "Space Grotesk", sans-serif;
-    margin: 40px;               /* Distância das bordas da tela */
+    /* Fonte principal */
+
+    margin: 40px;
+    /* Distância das bordas da tela */
 }
 
 
@@ -17,11 +24,14 @@ body {
 h1,
 h2 {
     font-family: "Archivo Black", sans-serif;
+    /* Fonte pesada dos títulos */
 }
+
 
 button,
 textarea {
     font-family: "Space Grotesk", sans-serif;
+    /* Fonte dos botões e caixa de anotação */
 }
 
 
@@ -34,15 +44,17 @@ h1 {
     font-family: "Archivo Black", sans-serif;
 
     font-size: clamp(65px, 9vw, 120px);
-    /* 65px = mínimo
+    /*
+       65px = tamanho mínimo
        9vw = tamanho proporcional à tela
-       120px = máximo */
+       120px = tamanho máximo
+    */
 
     line-height: 0.85;
-    /* Espaçamento vertical */
+    /* Espaçamento vertical entre linhas */
 
     letter-spacing: -0.06em;
-    /* Espaçamento entre letras */
+    /* Aproxima as letras */
 
     margin: 0 0 40px 0;
     /* cima | direita | baixo | esquerda */
@@ -65,8 +77,10 @@ body > p {
     /* Espaçamento entre linhas */
 
     margin: 0 0 65px 30px;
-    /* 30px = deslocamento para direita
-       65px = espaço abaixo */
+    /*
+       30px = deslocamento para a direita
+       65px = espaço abaixo
+    */
 
     text-transform: uppercase;
 
@@ -81,13 +95,15 @@ body > p {
 
 body > h2 {
     margin: 0 0 25px 30px;
-    /* 30px = esquerda
-       25px = espaço abaixo */
+    /*
+       30px = deslocamento para a direita
+       25px = espaço abaixo
+    */
 
     font-family: "Archivo Black", sans-serif;
 
     font-size: 35px;
-    /* Tamanho do título */
+    /* Tamanho dos títulos de seção */
 }
 
 
@@ -100,7 +116,7 @@ body > h2 {
     /* Distância da esquerda */
 
     margin-bottom: 35px;
-    /* Espaço entre o texto e os botões */
+    /* Espaço entre o título e os botões */
 
     font-family: "Space Grotesk", sans-serif;
 
@@ -133,8 +149,10 @@ body > h2 {
     /* Largura da grade */
 
     margin: 0 30px 40px 30px;
-    /* 30px = laterais
-       40px = espaço abaixo */
+    /*
+       30px = laterais
+       40px = espaço abaixo
+    */
 
     box-sizing: border-box;
 }
@@ -149,7 +167,7 @@ body > h2 {
     /* ---------- TAMANHO ---------- */
 
     width: 100%;
-    /* Ocupa toda a coluna */
+    /* Ocupa toda a largura da coluna */
 
     height: 150px;
     /* Altura de todos os botões */
@@ -215,7 +233,7 @@ body > h2 {
 .modos button strong {
 
     font-family: "Archivo Black", sans-serif;
-    /* Fonte do título */
+    /* Fonte pesada */
 
     font-size: 28px;
     /* Tamanho do título */
@@ -276,6 +294,9 @@ body > h2 {
 
     font-size: 16px;
 
+    font-weight: 700;
+    /* Negrito */
+
     cursor: pointer;
 }
 
@@ -287,12 +308,12 @@ body > h2 {
 #titulo-resultado {
 
     margin-left: 30px;
-    /* Alinhamento com a seção anterior */
+    /* Alinha com os modos */
 
     margin-top: 0;
 
-    margin-bottom: 30px;
-    /* Espaço entre RESULTADO e os campos */
+    margin-bottom: 40px;
+    /* Espaço entre RESULTADO e a ficha */
 
     font-family: "Archivo Black", sans-serif;
 
@@ -303,8 +324,13 @@ body > h2 {
 
 
 /* =========================================================
-   ÁREA DOS RESULTADOS
+   FICHA DE RESULTADO
    ========================================================= */
+
+/*
+   Todos os campos do resultado começam
+   no mesmo alinhamento.
+*/
 
 #resultado-modo,
 #resultado-tema,
@@ -318,7 +344,96 @@ body > h2 {
 #resultado-construcao {
 
     margin-left: 30px;
-    /* Alinhamento dos resultados */
+    /* Alinhamento da ficha */
+
+    margin-right: 30px;
+    /* Respiro do lado direito */
+
+    margin-bottom: 0;
+    /* O espaçamento será controlado individualmente */
+
+    padding: 18px 0;
+    /* Espaço em cima e embaixo */
+
+    border-bottom: 1px solid #111111;
+    /* Linha divisória entre informações */
+
+    font-family: "IBM Plex Mono", monospace;
+    /* Fonte técnica das categorias */
+
+    font-size: 12px;
+    /* Tamanho das categorias */
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PRIMEIRO ITEM DA FICHA — MODO
+   ========================================================= */
+
+#resultado-modo {
+
+    padding-top: 0;
+    /* Evita espaço desnecessário no topo */
+
+    margin-bottom: 10px;
+}
+
+
+/* Resultado do modo */
+
+#resultado-modo #modo {
+
+    display: block;
+    /* Coloca o valor em uma nova linha */
+
+    margin-top: 8px;
+    /* Espaço entre MODO e o valor */
+
+    font-family: "Archivo Black", sans-serif;
+    /* Fonte pesada */
+
+    font-size: 28px;
+    /* Tamanho do modo */
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   VALORES DOS RESULTADOS
+   Tema, cor, material, etc.
+   ========================================================= */
+
+#resultado-tema #tema,
+#resultado-cor #cor,
+#resultado-cor-secundaria #cor-secundaria,
+#resultado-material #material,
+#resultado-estampa #estampa,
+#resultado-linguagem #linguagem,
+#resultado-atmosfera #atmosfera,
+#resultado-universo #universo,
+#resultado-construcao #construcao {
+
+    display: inline-block;
+    /* Mantém o valor junto da categoria */
+
+    margin-left: 15px;
+    /* Espaço entre categoria e resultado */
+
+    font-family: "Space Grotesk", sans-serif;
+    /* Fonte do resultado */
+
+    font-size: 22px;
+    /* Resultado maior que a categoria */
+
+    font-weight: 500;
+
+    text-transform: none;
+    /* Mantém o texto sorteado como foi gerado */
 }
 
 
@@ -329,14 +444,29 @@ body > h2 {
 .refresh {
 
     background: transparent;
+    /* Sem fundo */
+
+    color: #111111;
+    /* Ícone preto */
 
     border: none;
+    /* Remove borda padrão */
+
+    border-radius: 0;
 
     cursor: pointer;
 
     font-size: 14px;
+    /* Tamanho do símbolo */
 
     padding: 2px 5px;
+    /* Espaço ao redor do símbolo */
+
+    appearance: none;
+    /* Remove aparência padrão do navegador */
+
+    vertical-align: middle;
+    /* Alinha com o resultado */
 }
 
 
@@ -347,6 +477,7 @@ body > h2 {
 #anotacao-container {
 
     margin: 60px 30px 40px 30px;
+    /* Espaço antes da anotação */
 }
 
 
@@ -385,7 +516,7 @@ body > h2 {
 
 
 /* =========================================================
-   BOTÃO DE COPIAR
+   ÁREA DO BOTÃO DE COPIAR
    ========================================================= */
 
 .acoes-anotacao {
@@ -393,6 +524,8 @@ body > h2 {
     margin-top: 15px;
 }
 
+
+/* Botão de copiar */
 
 #copiar-resultado {
 
