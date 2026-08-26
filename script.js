@@ -278,6 +278,17 @@ function sortearDiferente(lista, valorAtual) {
     return novoValor;
 }
 
+function sortearMultiplosDiferentes(lista, quantidade, valorAtual) {
+
+    let novosValores;
+
+    do {
+        novosValores = sortearVarios(lista, quantidade);
+    } while (novosValores.join(" + ") === valorAtual);
+
+    return novosValores.join(" + ");
+}
+
 function sortearVarios(lista, quantidade) {
     const copia = [...lista];
     const resultado = [];
@@ -464,12 +475,20 @@ function ativarRefresh() {
 
     document.getElementById("refresh-cor").onclick = function() {
 
-        const atual = camposResultado.cor.textContent;
+    const atual = camposResultado.cor.textContent;
+
+    if (modoSelecionado === "imersao") {
+
+        camposResultado.cor.textContent =
+            sortearMultiplosDiferentes(cores, 2, atual);
+
+    } else {
 
         camposResultado.cor.textContent =
             sortearDiferente(cores, atual);
-    };
 
+    }
+};
 
     // ===== COR SECUNDÁRIA =====
 
@@ -486,12 +505,20 @@ function ativarRefresh() {
 
     document.getElementById("refresh-material").onclick = function() {
 
-        const atual = camposResultado.material.textContent;
+    const atual = camposResultado.material.textContent;
+
+    if (modoSelecionado === "imersao") {
+
+        camposResultado.material.textContent =
+            sortearMultiplosDiferentes(materiais, 2, atual);
+
+    } else {
 
         camposResultado.material.textContent =
             sortearDiferente(materiais, atual);
-    };
 
+    }
+};
 
     // ===== ESTAMPA =====
 
