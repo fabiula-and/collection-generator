@@ -322,10 +322,14 @@ document.getElementById("gerar").addEventListener("click", function() {
     const corSecundariaSorteada = coresSecundarias[
     Math.floor(Math.random() * coresSecundarias.length)
 ];
+    const materialSorteado = materiais[
+    Math.floor(Math.random() * materiais.length)
+];
 
     document.getElementById("tema").textContent = temaSorteado;
     document.getElementById("cor").textContent = corSorteada;
     document.getElementById("cor-secundaria").textContent = corSecundariaSorteada;
+    document.getElementById("material").textContent = materialSorteado;
 
 
 });
