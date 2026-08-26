@@ -486,7 +486,10 @@ function ativarRefresh() {
 
     const atual = camposResultado.cor.textContent;
 
-    if (modoSelecionado === "imersao") {
+    if (
+        modoSelecionado === "imersao" ||
+        modoSelecionado === "caos"
+    ) {
 
         camposResultado.cor.textContent =
             sortearMultiplosDiferentes(cores, 2, atual);
@@ -521,6 +524,11 @@ function ativarRefresh() {
         camposResultado.material.textContent =
             sortearMultiplosDiferentes(materiais, 2, atual);
 
+    } else if (modoSelecionado === "caos") {
+
+        camposResultado.material.textContent =
+            sortearMultiplosDiferentes(materiais, 3, atual);
+
     } else {
 
         camposResultado.material.textContent =
@@ -528,7 +536,7 @@ function ativarRefresh() {
 
     }
 };
-
+    
     // ===== ESTAMPA =====
 
     document.getElementById("refresh-estampa").onclick = function() {
@@ -577,14 +585,20 @@ function ativarRefresh() {
 
     document.getElementById("refresh-construcao").onclick = function() {
 
-        const atual = camposResultado.construcao.textContent;
+    const atual = camposResultado.construcao.textContent;
+
+    if (modoSelecionado === "caos") {
+
+        camposResultado.construcao.textContent =
+            sortearMultiplosDiferentes(construcoes, 2, atual);
+
+    } else {
 
         camposResultado.construcao.textContent =
             sortearDiferente(construcoes, atual);
-    };
 
-}
-
+    }
+};
 
 // ===== MODOS =====
 
