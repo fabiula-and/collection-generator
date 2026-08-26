@@ -507,10 +507,10 @@ body > h2 {
     /* Espaço entre a ferramenta e o rodapé */
 
     padding-top: 18px;
-    /* Pequeno espaço acima da assinatura */
+    /* Espaço entre a linha e o conteúdo */
 
     border-top: 1px solid #111111;
-    /* Linha de fechamento */
+    /* Linha de fechamento da página */
 
     display: flex;
 
@@ -531,7 +531,7 @@ body > h2 {
     font-family: "IBM Plex Mono", monospace;
 
     font-size: 9px;
-    /* Bem pequeno e discreto */
+    /* Pequeno e discreto */
 
     font-weight: 500;
 
@@ -551,62 +551,50 @@ body > h2 {
 
     align-items: center;
 
-    gap: 14px;
-    /* Espaço pequeno entre os ícones */
+    gap: 10px;
+    /* Espaço entre nomes e separadores */
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 9px;
+    /* Mesmo tamanho da assinatura */
+
+    letter-spacing: 0.04em;
 }
 
 
 /* =========================================================
-   LINKS
+   LINKS DAS REDES
    ========================================================= */
 
 .redes-sociais a {
 
-    width: 18px;
-
-    height: 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
     color: #111111;
 
     text-decoration: none;
+    /* Remove sublinhado */
 
-    transition: transform 0.2s ease;
+    font-weight: 500;
 }
 
 
 /* =========================================================
-   ÍCONES
-   ========================================================= */
-
-.redes-sociais svg {
-
-    width: 15px;
-
-    height: 15px;
-
-    fill: none;
-
-    stroke: currentColor;
-
-    stroke-width: 1.7;
-
-    stroke-linecap: round;
-
-    stroke-linejoin: round;
-}
-
-
-/* =========================================================
-   HOVER
+   HOVER DOS LINKS
    ========================================================= */
 
 .redes-sociais a:hover {
 
-    transform: translateY(-2px);
+    text-decoration: underline;
+    /* Mostra que é clicável */
+}
+
+
+/* =========================================================
+   SEPARADORES
+   ========================================================= */
+
+.redes-sociais span {
+
+    opacity: 0.5;
+    /* Deixa a bolinha mais discreta */
 }
