@@ -825,3 +825,61 @@ document.getElementById("gerar").addEventListener("click", function() {
     mostrarResultado(resultado);
 
 });
+
+// ===== ANOTAÇÃO =====
+
+const campoAnotacao = document.getElementById("anotacao");
+
+
+// ===== COPIAR RESULTADO =====
+
+document.getElementById("copiar-resultado").addEventListener("click", function() {
+
+    let texto = "COLLECTION GENERATOR\n\n";
+
+    texto += "Modo: " + camposResultado.modo.textContent + "\n\n";
+
+
+    const categorias = [
+        ["Tema", "tema"],
+        ["Cor principal", "cor"],
+        ["Cor secundária", "corSecundaria"],
+        ["Material", "material"],
+        ["Estampa", "estampa"],
+        ["Linguagem", "linguagem"],
+        ["Atmosfera", "atmosfera"],
+        ["Universo", "universo"],
+        ["Construção", "construcao"]
+    ];
+
+
+    categorias.forEach(function(categoria) {
+
+        const nome = categoria[0];
+        const campo = categoria[1];
+
+        if (
+            linhasResultado[campo] &&
+            linhasResultado[campo].style.display !== "none" &&
+            camposResultado[campo].textContent
+        ) {
+
+            texto += nome + ": " +
+                camposResultado[campo].textContent +
+                "\n";
+        }
+
+    });
+
+
+    if (campoAnotacao.value.trim() !== "") {
+
+        texto += "\nMINHA IDEIA\n\n";
+        texto += campoAnotacao.value.trim();
+
+    }
+
+
+    navigator.clipboard.writeText(texto);
+
+});
