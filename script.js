@@ -385,6 +385,26 @@ function gerarLivre() {
     };
 }
 
+// ===== IDEIA =====
+
+function gerarIdeia() {
+
+    return {
+        modo: "Ideia",
+
+        tema: sortear(temas),
+
+        cor: sortear(cores),
+
+        corSecundaria: sortear(coresSecundarias),
+
+        material: sortear(materiais),
+
+        linguagem: sortear(linguagens),
+
+        atmosfera: sortear(atmosferas)
+    };
+}
 
 // ===== GERAR =====
 
@@ -394,17 +414,21 @@ document.getElementById("gerar").addEventListener("click", function() {
 
     let resultado;
 
-    if (modoSelecionado === "livre") {
+   if (modoSelecionado === "livre") {
 
-        resultado = gerarLivre();
+    resultado = gerarLivre();
 
-    } else {
+} else if (modoSelecionado === "ideia") {
 
-        resultado = {
-            modo: modoSelecionado
-        };
+    resultado = gerarIdeia();
 
-    }
+} else {
+
+    resultado = {
+        modo: modoSelecionado
+    };
+
+}
 
     mostrarResultado(resultado);
 
