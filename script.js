@@ -12,29 +12,26 @@ let escalaSelecionada = "1 peça";
 
 // ===== MODOS =====
 
-document.getElementById("modo-ideia").addEventListener("click", function() {
-    modoSelecionado = "ideia";
-    console.log("Modo escolhido:", modoSelecionado);
-});
+const botoesModo = document.querySelectorAll("[id^='modo-']");
 
-document.getElementById("modo-estampa").addEventListener("click", function() {
-    modoSelecionado = "estampa";
-    console.log("Modo escolhido:", modoSelecionado);
-});
+botoesModo.forEach(function(botao) {
 
-document.getElementById("modo-mini").addEventListener("click", function() {
-    modoSelecionado = "mini";
-    console.log("Modo escolhido:", modoSelecionado);
-});
+    botao.addEventListener("click", function() {
 
-document.getElementById("modo-completa").addEventListener("click", function() {
-    modoSelecionado = "completa";
-    console.log("Modo escolhido:", modoSelecionado);
-});
+        botoesModo.forEach(function(b) {
+            b.style.backgroundColor = "";
+            b.style.color = "";
+        });
 
-document.getElementById("modo-caos").addEventListener("click", function() {
-    modoSelecionado = "caos";
-    console.log("Modo escolhido:", modoSelecionado);
+        botao.style.backgroundColor = "#111827";
+        botao.style.color = "white";
+
+        modoSelecionado = botao.id.replace("modo-", "");
+
+        console.log("Modo escolhido:", modoSelecionado);
+
+    });
+
 });
 
 
