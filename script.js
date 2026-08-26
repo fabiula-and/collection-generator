@@ -433,6 +433,7 @@ function gerarConceito() {
 
 function gerarImersao() {
 
+    const coresSorteadas = sortearVarios(cores, 2);
     const materiaisSorteados = sortearVarios(materiais, 2);
 
     return {
@@ -440,7 +441,7 @@ function gerarImersao() {
 
         tema: sortear(temas),
 
-        cor: sortear(cores),
+        cor: coresSorteadas.join(" + "),
 
         corSecundaria: sortear(coresSecundarias),
 
