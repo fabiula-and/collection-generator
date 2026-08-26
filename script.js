@@ -137,6 +137,39 @@ const materiais = [
     "Espelhado"
 ];
 
+const estampas = [
+    "Floral",
+    "Animal",
+    "Geométrico",
+    "Tipográfico",
+    "Fotográfico",
+    "Abstrato",
+    "Paisagem",
+    "Xadrez",
+    "Listras",
+    "Poá",
+    "Camuflagem",
+    "Toile",
+    "Heráldico",
+    "Barroco",
+    "Psicodélico",
+    "Infantil",
+    "Botânico",
+    "Anatômico",
+    "Cartográfico",
+    "Industrial",
+    "Digital",
+    "Pixelado",
+    "3D",
+    "Ruído",
+    "Colagem",
+    "Grafite",
+    "Doodle",
+    "Ilustração",
+    "Microestampa",
+    "Maxi-estampa"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
