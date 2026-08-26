@@ -1,6 +1,19 @@
 body {
     background-color: #F2F0EA;
     color: #111111;
-    font-family: Arial, sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     margin: 40px;
+}
+
+h1,
+h2 {
+    font-family: "Archivo Black", sans-serif;
+}
+
+button {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+textarea {
+    font-family: "Space Grotesk", sans-serif;
 }
