@@ -194,6 +194,17 @@ const atmosferas = [
     "Romântico"
 ];
 
+const universos = [
+    "Submundo",
+    "Alta sociedade",
+    "Periferia",
+    "Futuro próximo",
+    "Passado remoto",
+    "Mundo infantil",
+    "Pós-apocalipse",
+    "Vida suburbana"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
