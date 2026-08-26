@@ -600,6 +600,8 @@ function ativarRefresh() {
     }
 };
 
+}
+
 // ===== MODOS =====
 
 const botoesModo = document.querySelectorAll(
