@@ -828,22 +828,54 @@ document.getElementById("gerar").addEventListener("click", function() {
 
 // ===== ANOTAÇÃO =====
 
-<div id="anotacao-container">
+// ===== COPIAR RESULTADO =====
 
-    <h3>Sua ideia</h3>
+document.getElementById("copiar-resultado").addEventListener("click", function() {
 
-    <textarea
-        id="anotacao"
-        placeholder="Escreva aqui sua interpretação, referências ou ideias para desenvolver este resultado..."
-    ></textarea>
+    let texto = "COLLECTION GENERATOR\n\n";
 
-    <div class="acoes-anotacao">
-        <button id="copiar-resultado">
-            📋 COPIAR RESULTADO
-        </button>
-    </div>
+    texto += "Modo: " + camposResultado.modo.textContent + "\n\n";
 
-</div>
+    const categorias = [
+        ["Tema", "tema"],
+        ["Cor principal", "cor"],
+        ["Cor secundária", "corSecundaria"],
+        ["Material", "material"],
+        ["Estampa", "estampa"],
+        ["Linguagem", "linguagem"],
+        ["Atmosfera", "atmosfera"],
+        ["Universo", "universo"],
+        ["Construção", "construcao"]
+    ];
+
+    categorias.forEach(function(categoria) {
+
+        const nome = categoria[0];
+        const campo = categoria[1];
+
+        if (
+            linhasResultado[campo] &&
+            linhasResultado[campo].style.display !== "none" &&
+            camposResultado[campo].textContent
+        ) {
+
+            texto += nome + ": " +
+                camposResultado[campo].textContent +
+                "\n";
+        }
+
+    });
+
+    if (campoAnotacao.value.trim() !== "") {
+
+        texto += "\nMINHA IDEIA\n\n";
+        texto += campoAnotacao.value.trim();
+
+    }
+
+    navigator.clipboard.writeText(texto);
+
+});
 
 
 // ===== COPIAR RESULTADO =====
