@@ -109,6 +109,34 @@ const cores = [
     "Holográfico / Furtacor"
 ];
 
+const materiais = [
+    "Plástico",
+    "Vinil",
+    "Tule",
+    "Renda",
+    "Cetim",
+    "Veludo",
+    "Crochê",
+    "Jeans",
+    "Couro",
+    "Metal",
+    "Borracha",
+    "Acrílico",
+    "Organza",
+    "Pelúcia",
+    "Paetê",
+    "Lantejoula",
+    "Transparência",
+    "Matelassê",
+    "Felpudo",
+    "Amassado",
+    "Molhado",
+    "Brilhante",
+    "Opaco",
+    "Translúcido",
+    "Espelhado"
+];
+
 let modoSelecionado = "ideia";
 let escalaSelecionada = "1 peça";
 
