@@ -6,8 +6,8 @@
 body {
     background-color: #F2F0EA; /* Cor do fundo */
     color: #111111;             /* Cor padrão dos textos */
-    font-family: "Space Grotesk", sans-serif; /* Fonte padrão */
-    margin: 40px;               /* Distância da página até a borda da tela */
+    font-family: "Space Grotesk", sans-serif;
+    margin: 40px;               /* Distância das bordas da tela */
 }
 
 
@@ -15,13 +15,13 @@ body {
    TIPOGRAFIA GERAL
    ========================================================= */
 
-/* Fonte dos títulos principais */
+/* Fonte dos títulos */
 h1,
 h2 {
     font-family: "Archivo Black", sans-serif;
 }
 
-/* Fonte dos botões e da caixa de anotação */
+/* Fonte padrão dos botões e da caixa de anotação */
 button,
 textarea {
     font-family: "Space Grotesk", sans-serif;
@@ -37,27 +37,29 @@ h1 {
     font-family: "Archivo Black", sans-serif;
 
     font-size: clamp(65px, 9vw, 120px);
-    /* Tamanho do título.
+    /*
        65px = tamanho mínimo
-       9vw = cresce conforme a tela
-       120px = tamanho máximo */
+       9vw = tamanho proporcional à tela
+       120px = tamanho máximo
+    */
 
     line-height: 0.85;
     /* Espaçamento vertical entre linhas */
 
     letter-spacing: -0.06em;
-    /* Espaçamento entre as letras */
+    /* Aproxima as letras */
 
     margin: 0 0 40px 0;
-    /* cima | direita | baixo | esquerda */
+    /*
+       cima | direita | baixo | esquerda
+    */
 
     text-transform: uppercase;
-    /* Deixa tudo em MAIÚSCULO */
 }
 
 
 /* =========================================================
-   SUBTÍTULO
+   SUBTÍTULO PRINCIPAL
    ========================================================= */
 
 body > p {
@@ -70,8 +72,10 @@ body > p {
     /* Espaçamento entre linhas */
 
     margin: 0 0 80px 30px;
-    /* 30px = deslocamento para a direita
-       80px = espaço abaixo */
+    /*
+       30px = deslocamento para a direita
+       80px = espaço abaixo
+    */
 
     text-transform: uppercase;
 
@@ -87,8 +91,10 @@ body > p {
 
 body > h2 {
     margin: 0 0 25px 30px;
-    /* 30px = deslocamento para a direita
-       25px = espaço abaixo */
+    /*
+       30px = deslocamento para a direita
+       25px = espaço abaixo
+    */
 
     font-family: "Archivo Black", sans-serif;
 
@@ -103,20 +109,23 @@ body > h2 {
 
 .modos {
     display: grid;
-    /* Organiza os botões em uma grade */
+    /* Cria a grade */
 
     grid-template-columns: repeat(3, 1fr);
-    /* 3 colunas com o mesmo tamanho */
+    /* 3 colunas de mesmo tamanho */
 
     gap: 18px;
-    /* Espaço entre os botões */
+    /* Espaço entre os cartões */
 
     width: calc(100% - 60px);
-    /* Largura total da área dos botões */
+    /* Largura da grade */
 
     margin: 0 30px 40px 30px;
-    /* 30px dos lados
-       40px abaixo */
+    /*
+       30px = esquerda
+       30px = direita
+       40px = espaço abaixo
+    */
 
     box-sizing: border-box;
 }
@@ -130,20 +139,20 @@ body > h2 {
 
     /* ---------- TAMANHO ---------- */
 
-    width: 250px;
-    /* Largura de cada botão */
+    width: 100%;
+    /* Ocupa toda a largura disponível da coluna */
 
     height: 150px;
-    /* Altura de cada botão */
+    /* Altura de TODOS os botões */
 
 
     /* ---------- BORDA ---------- */
 
     border: 5px solid #111111;
-    /* Espessura + cor da borda */
+    /* Espessura da borda */
 
     border-radius: 0;
-    /* 0 = cantos completamente retos */
+    /* Cantos completamente retos */
 
 
     /* ---------- FUNDO ---------- */
@@ -154,69 +163,210 @@ body > h2 {
 
     /* ---------- ESPAÇO INTERNO ---------- */
 
-    padding: 10px 32px 30px 32px;
+    padding: 20px 32px;
     /*
-       10px = espaço em cima
-       32px = espaço à direita
-       30px = espaço embaixo
-       32px = espaço à esquerda
-
-       O espaço de cima foi reduzido para
-       deixar o conteúdo um pouco mais alto.
+       20px = espaço em cima e embaixo
+       32px = espaço dos lados
     */
 
 
-    /* ---------- TEXTO DA DESCRIÇÃO ---------- */
+    /* ---------- POSICIONAMENTO ---------- */
+
+    display: flex;
+    /* Permite controlar título e descrição separadamente */
+
+    flex-direction: column;
+    /* Coloca título e descrição um abaixo do outro */
+
+    justify-content: space-between;
+    /*
+       Empurra:
+       título → para o topo
+       descrição → para o fundo
+    */
+
+
+    /* ---------- TEXTO ---------- */
 
     text-align: left;
-    /* Texto alinhado à esquerda */
+    /* Tudo alinhado à esquerda */
 
     font-family: "Space Grotesk", sans-serif;
-
-    font-size: 16px;
-    /* Tamanho da descrição */
-
-    line-height: 1.4;
-    /* Espaçamento entre as linhas da descrição */
 
 
     /* ---------- COMPORTAMENTO ---------- */
 
     box-sizing: border-box;
-    /* Faz largura e altura incluírem
-       borda + padding */
+    /* Inclui borda e padding dentro
+       dos 150px de altura */
 
     cursor: pointer;
-    /* Mostra a mãozinha ao passar o mouse */
+    /* Mãozinha ao passar o mouse */
 }
 
 
 /* =========================================================
    TÍTULO DENTRO DOS MODOS
-   Ex.: LIVRE / IDEIA / CAOS
+   Ex.: LIVRE / IDEIA / CONCEITO
    ========================================================= */
 
 .modos button strong {
 
-    display: block;
-    /* Faz o título ocupar sua própria linha */
-
-
     font-family: "Archivo Black", sans-serif;
-    /* Fonte pesada do título */
-
+    /* Fonte pesada */
 
     font-size: 28px;
-    /* Tamanho do nome do modo */
-
+    /* Tamanho do título */
 
     line-height: 1;
-    /* Altura da linha do título */
+    /* Altura da linha */
 
-    height: 28px;
-    /* Reserva exatamente o mesmo espaço
-       para o título de todos os botões */
+    display: block;
+    /* Ocupa sua própria área */
+}
 
-    margin-bottom: 5px;
-    /* Espaço entre o título e a descrição */
+
+/* =========================================================
+   DESCRIÇÃO DENTRO DOS MODOS
+   Ex.: Tudo pode entrar.
+   ========================================================= */
+
+.modos button span {
+
+    font-family: "Space Grotesk", sans-serif;
+    /* Fonte da descrição */
+
+    font-size: 16px;
+    /* Tamanho da descrição */
+
+    line-height: 1.4;
+    /* Espaçamento entre linhas */
+
+    display: block;
+    /* Ocupa sua própria área */
+}
+
+
+/* =========================================================
+   BOTÃO GERAR
+   ========================================================= */
+
+#gerar {
+    margin-left: 30px;
+    /* Alinha com os modos */
+
+    padding: 18px 35px;
+    /* Espaço interno */
+
+    background: #111111;
+    /* Fundo preto */
+
+    color: #F2F0EA;
+    /* Texto off-white */
+
+    border: 3px solid #111111;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ÁREA DE RESULTADO
+   ========================================================= */
+
+#resultado-modo,
+#resultado-tema,
+#resultado-cor,
+#resultado-cor-secundaria,
+#resultado-material,
+#resultado-estampa,
+#resultado-linguagem,
+#resultado-atmosfera,
+#resultado-universo,
+#resultado-construcao {
+    margin-left: 30px;
+}
+
+
+/* =========================================================
+   BOTÕES DE REFRESH
+   ========================================================= */
+
+.refresh {
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    padding: 2px 5px;
+}
+
+
+/* =========================================================
+   ÁREA DE ANOTAÇÃO
+   ========================================================= */
+
+#anotacao-container {
+    margin: 60px 30px 40px 30px;
+}
+
+
+/* Título "Sua ideia" */
+#anotacao-container h3 {
+    font-family: "Archivo Black", sans-serif;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Caixa de texto */
+#anotacao {
+    width: 100%;
+    min-height: 180px;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    border: 3px solid #111111;
+
+    padding: 20px;
+
+    resize: vertical;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ÁREA DO BOTÃO DE COPIAR
+   ========================================================= */
+
+.acoes-anotacao {
+    margin-top: 15px;
+}
+
+
+/* Botão de copiar */
+#copiar-resultado {
+    padding: 15px 25px;
+
+    background: #111111;
+
+    color: #F2F0EA;
+
+    border: 3px solid #111111;
+
+    font-size: 15px;
+
+    cursor: pointer;
 }
