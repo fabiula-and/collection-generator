@@ -66,6 +66,8 @@ botoesEscala.forEach(function(botao) {
 
 document.getElementById("gerar").addEventListener("click", function() {
 
+    console.log("Gerando modo:", modoSelecionado);
+    
     const temaSorteado = temas[Math.floor(Math.random() * temas.length)];
 
     document.getElementById("tema").textContent = temaSorteado;
