@@ -46,8 +46,11 @@ body > p {
 
 .modos button {
     background: transparent;
-    border: 1px solid #111111;
+    border: 3px solid #111111;
     border-radius: 0;
+    padding: 35px;
+    min-height: 150px;
+    text-align: left;
 }
 
 .modos {
