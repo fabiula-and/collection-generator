@@ -1,1 +1,7 @@
-console.log("O cérebro da Collection Generator está funcionando!");
+const temas = [
+    "Funeral",
+    "Casamento",
+    "Escola",
+    "Supermercado",
+    "Hospital"
+];
