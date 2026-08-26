@@ -116,7 +116,7 @@ body > h2 {
     /* Distância da esquerda */
 
     margin-bottom: 35px;
-    /* Espaço entre o texto e os botões */
+    /* Espaço entre o título e os botões */
 
     font-family: "Space Grotesk", sans-serif;
 
@@ -164,16 +164,11 @@ body > h2 {
 
 .modos button {
 
-    /* ---------- TAMANHO ---------- */
-
     width: 100%;
     /* Ocupa toda a largura da coluna */
 
     height: 150px;
-    /* Altura de todos os botões */
-
-
-    /* ---------- BORDA ---------- */
+    /* Altura dos botões */
 
     border: 5px solid #111111;
     /* Espessura da borda */
@@ -181,14 +176,8 @@ body > h2 {
     border-radius: 0;
     /* Cantos retos */
 
-
-    /* ---------- FUNDO ---------- */
-
     background: transparent;
     /* Fundo transparente */
-
-
-    /* ---------- ESPAÇO INTERNO ---------- */
 
     padding: 20px 32px;
     /*
@@ -196,28 +185,19 @@ body > h2 {
        32px = esquerda e direita
     */
 
-
-    /* ---------- POSICIONAMENTO ---------- */
-
     display: flex;
 
     flex-direction: column;
 
     justify-content: space-between;
     /*
-       Título → topo
-       Descrição → fundo
+       Título no topo
+       Descrição no fundo
     */
-
-
-    /* ---------- TEXTO ---------- */
 
     text-align: left;
 
     font-family: "Space Grotesk", sans-serif;
-
-
-    /* ---------- COMPORTAMENTO ---------- */
 
     box-sizing: border-box;
 
@@ -227,7 +207,6 @@ body > h2 {
 
 /* =========================================================
    TÍTULO DENTRO DOS MODOS
-   Ex.: LIVRE / IDEIA / CONCEITO
    ========================================================= */
 
 .modos button strong {
@@ -242,13 +221,11 @@ body > h2 {
     /* Altura da linha */
 
     display: block;
-    /* Ocupa sua própria área */
 }
 
 
 /* =========================================================
    DESCRIÇÃO DENTRO DOS MODOS
-   Ex.: Tudo pode entrar.
    ========================================================= */
 
 .modos button span {
@@ -263,7 +240,6 @@ body > h2 {
     /* Espaçamento entre linhas */
 
     display: block;
-    /* Ocupa sua própria área */
 }
 
 
@@ -328,8 +304,8 @@ body > h2 {
    ========================================================= */
 
 /*
-   Aqui começa a ficha de direção criativa.
-   Cada informação ocupa uma linha.
+   Cada resultado funciona como uma pequena linha
+   da ficha editorial.
 */
 
 #resultado-modo,
@@ -347,18 +323,18 @@ body > h2 {
     /* Alinhamento da ficha */
 
     margin-right: 30px;
-    /* Respiro do lado direito */
+    /* Respiro da direita */
 
     margin-bottom: 0;
 
     padding: 18px 0;
-    /* Espaço acima e abaixo de cada informação */
+    /* Espaço vertical de cada linha */
 
     border-bottom: 1px solid #111111;
     /* Linha divisória */
 
     font-family: "IBM Plex Mono", monospace;
-    /* Fonte técnica */
+    /* Fonte das categorias */
 
     font-size: 12px;
     /* Tamanho da categoria */
@@ -369,6 +345,21 @@ body > h2 {
     line-height: 1.4;
 
     text-transform: uppercase;
+
+    /*
+       GRID:
+       1ª coluna = categoria
+       2ª coluna = resultado
+       3ª coluna = refresh
+    */
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr 45px;
+
+    column-gap: 15px;
+
+    align-items: center;
 }
 
 
@@ -393,7 +384,7 @@ body > h2 {
     /* Coloca o valor em uma nova linha */
 
     margin-top: 8px;
-    /* Espaço entre MODO e o valor */
+    /* Espaço entre MODO e CAOS */
 
     font-family: "Archivo Black", sans-serif;
     /* Fonte pesada */
@@ -402,7 +393,7 @@ body > h2 {
     /* Tamanho do modo */
 
     font-weight: 400;
-    /* O valor não fica em negrito adicional */
+    /* Resultado sem peso adicional */
 
     line-height: 1;
 
@@ -412,8 +403,11 @@ body > h2 {
 
 /* =========================================================
    VALORES DOS RESULTADOS
-   Tema, cor, material etc.
    ========================================================= */
+
+/*
+   Os valores ficam na coluna central da ficha.
+*/
 
 #resultado-tema #tema,
 #resultado-cor #cor,
@@ -425,11 +419,11 @@ body > h2 {
 #resultado-universo #universo,
 #resultado-construcao #construcao {
 
-    display: inline-block;
-    /* Mantém o resultado na mesma linha */
+    display: block;
+    /* Ocupa a coluna do resultado */
 
-    margin-left: 15px;
-    /* Espaço entre categoria e resultado */
+    margin-left: 0;
+    /* O espaçamento agora é controlado pelo GRID */
 
     font-family: "Space Grotesk", sans-serif;
     /* Fonte do resultado */
@@ -438,7 +432,7 @@ body > h2 {
     /* Resultado maior que a categoria */
 
     font-weight: 400;
-    /* RESULTADO NORMAL, SEM NEGRITO */
+    /* Resultado NORMAL */
 
     text-transform: none;
 }
@@ -448,13 +442,18 @@ body > h2 {
    BOTÕES DE REFRESH
    ========================================================= */
 
+/*
+   Todos os refreshes ficam na mesma coluna,
+   independentemente do tamanho do resultado.
+*/
+
 .refresh {
 
     background: transparent;
     /* Sem fundo */
 
     color: #111111;
-    /* Cor definida para o botão */
+    /* Cor do botão */
 
     border: none;
     /* Sem borda */
@@ -467,13 +466,16 @@ body > h2 {
     /* Tamanho do símbolo */
 
     padding: 2px 5px;
-    /* Espaço ao redor */
+    /* Espaço interno */
 
     appearance: none;
     /* Remove aparência padrão */
 
-    vertical-align: middle;
-    /* Alinha com o resultado */
+    justify-self: end;
+    /* Encosta todos na mesma posição à direita */
+
+    align-self: center;
+    /* Centraliza verticalmente */
 }
 
 
