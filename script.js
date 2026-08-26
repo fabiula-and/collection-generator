@@ -828,7 +828,22 @@ document.getElementById("gerar").addEventListener("click", function() {
 
 // ===== ANOTAÇÃO =====
 
-const campoAnotacao = document.getElementById("anotacao");
+<div id="anotacao-container">
+
+    <h3>Sua ideia</h3>
+
+    <textarea
+        id="anotacao"
+        placeholder="Escreva aqui sua interpretação, referências ou ideias para desenvolver este resultado..."
+    ></textarea>
+
+    <div class="acoes-anotacao">
+        <button id="copiar-resultado">
+            📋 COPIAR RESULTADO
+        </button>
+    </div>
+
+</div>
 
 
 // ===== COPIAR RESULTADO =====
