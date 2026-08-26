@@ -261,7 +261,13 @@ let escalaSelecionada = "1 peça";
 
 // ===== MODOS =====
 
-const botoesModo = document.querySelectorAll("[id^='modo-']");
+document.getElementById("modo-livre").addEventListener("click", function() {
+    modoSelecionado = "livre";
+
+    console.log("Modo escolhido:", modoSelecionado);
+});
+
+const botoesModo = document.querySelectorAll("#modo-ideia, #modo-estampa, #modo-mini, #modo-completa, #modo-caos");
 
 botoesModo.forEach(function(botao) {
 
