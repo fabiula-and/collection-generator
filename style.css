@@ -389,6 +389,12 @@ body > h2 {
     font-size: 20px;
     /* Tamanho do texto */
 
+    font-weight: 700;
+    /* Deixa o texto em negrito */
+
+    line-height: 1.2;
+    /* Altura da linha */
+}
     line-height: 1.2;
     /* Altura da linha */
 }
