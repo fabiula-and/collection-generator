@@ -1,105 +1,217 @@
-/* ===== BASE ===== */
+/* =========================================================
+   BASE DA PÁGINA
+   ========================================================= */
 
+/* Corpo inteiro da página */
 body {
-    background-color: #F2F0EA;
-    color: #111111;
-    font-family: "Space Grotesk", sans-serif;
-    margin: 40px;
+    background-color: #F2F0EA; /* Cor do fundo */
+    color: #111111;             /* Cor padrão dos textos */
+    font-family: "Space Grotesk", sans-serif; /* Fonte padrão */
+    margin: 40px;               /* Distância da página até a borda da tela */
 }
 
 
-/* ===== TIPOGRAFIA GERAL ===== */
+/* =========================================================
+   TIPOGRAFIA GERAL
+   ========================================================= */
 
+/* Fonte dos títulos principais */
 h1,
 h2 {
     font-family: "Archivo Black", sans-serif;
 }
 
+/* Fonte dos botões e da caixa de anotação */
 button,
 textarea {
     font-family: "Space Grotesk", sans-serif;
 }
 
 
-/* ===== TÍTULO PRINCIPAL ===== */
+/* =========================================================
+   TÍTULO PRINCIPAL
+   COLLECTION GENERATOR
+   ========================================================= */
 
 h1 {
     font-family: "Archivo Black", sans-serif;
+
     font-size: clamp(65px, 9vw, 120px);
+    /* Tamanho do título.
+       65px = tamanho mínimo
+       9vw = cresce conforme a tela
+       120px = tamanho máximo */
+
     line-height: 0.85;
+    /* Espaçamento vertical entre linhas */
+
     letter-spacing: -0.06em;
+    /* Espaçamento entre as letras */
+
     margin: 0 0 40px 0;
+    /* cima | direita | baixo | esquerda */
+
     text-transform: uppercase;
+    /* Deixa tudo em MAIÚSCULO */
 }
 
 
-/* ===== SUBTÍTULO ===== */
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
 
 body > p {
     font-family: "IBM Plex Mono", monospace;
+
     font-size: 15px;
+    /* Tamanho do subtítulo */
+
     line-height: 1.5;
+    /* Espaçamento entre linhas */
+
     margin: 0 0 80px 30px;
+    /* 30px = deslocamento para a direita
+       80px = espaço abaixo */
+
     text-transform: uppercase;
+
     letter-spacing: 0.03em;
+    /* Espaçamento entre letras */
 }
 
 
-/* ===== TÍTULOS DE SEÇÃO ===== */
+/* =========================================================
+   TÍTULOS DE SEÇÃO
+   Ex.: O QUE VOCÊ QUER GERAR?
+   ========================================================= */
 
 body > h2 {
     margin: 0 0 25px 30px;
+    /* 30px = deslocamento para a direita
+       25px = espaço abaixo */
+
     font-family: "Archivo Black", sans-serif;
+
     font-size: 35px;
+    /* Tamanho do título da seção */
 }
 
 
-/* ===== MODOS ===== */
+/* =========================================================
+   ÁREA DOS MODOS
+   ========================================================= */
 
 .modos {
     display: grid;
+    /* Organiza os botões em uma grade */
+
     grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas com o mesmo tamanho */
+
     gap: 18px;
+    /* Espaço entre os botões */
 
     width: calc(100% - 60px);
+    /* Largura total da área dos botões */
+
     margin: 0 30px 40px 30px;
+    /* 30px dos lados
+       40px abaixo */
 
     box-sizing: border-box;
 }
 
 
-/* ===== BOTÕES DOS MODOS ===== */
+/* =========================================================
+   BOTÕES DOS MODOS
+   ========================================================= */
 
 .modos button {
-    width: 250px;
-    height: 150px;
 
-    box-sizing: border-box;
+    /* ---------- TAMANHO ---------- */
+
+    width: 250px;
+    /* Largura de cada botão */
+
+    height: 150px;
+    /* Altura de cada botão */
+
+
+    /* ---------- BORDA ---------- */
+
+    border: 5px solid #111111;
+    /* Espessura + cor da borda */
+
+    border-radius: 0;
+    /* 0 = cantos completamente retos */
+
+
+    /* ---------- FUNDO ---------- */
 
     background: transparent;
-    border: 5px solid #111111;
-    border-radius: 0;
+    /* Fundo transparente */
 
-    padding: 32px;
+
+    /* ---------- ESPAÇO INTERNO ---------- */
+
+    padding: 20px 32px;
+    /*
+       20px = espaço em cima e embaixo
+       32px = espaço dos lados
+
+       Diminuímos o espaço vertical de 32px
+       para 20px para o conteúdo caber melhor.
+    */
+
+
+    /* ---------- TEXTO ---------- */
 
     text-align: left;
+    /* Texto alinhado à esquerda */
 
     font-family: "Space Grotesk", sans-serif;
+
     font-size: 16px;
+    /* Tamanho da descrição */
+
     line-height: 1.4;
+    /* Espaçamento entre linhas */
+
+
+    /* ---------- COMPORTAMENTO ---------- */
+
+    box-sizing: border-box;
+    /* Faz largura e altura incluírem
+       borda + padding */
 
     cursor: pointer;
+    /* Mostra a mãozinha ao passar o mouse */
 }
 
 
-/* ===== TÍTULO DENTRO DOS MODOS ===== */
+/* =========================================================
+   TÍTULO DENTRO DOS MODOS
+   Ex.: LIVRE / IDEIA / CAOS
+   ========================================================= */
 
 .modos button strong {
+
     display: block;
+    /* Faz o título ocupar sua própria linha */
+
 
     font-family: "Archivo Black", sans-serif;
+    /* Fonte pesada do título */
+
+
     font-size: 28px;
+    /* Tamanho do nome do modo */
+
+
     line-height: 1;
+    /* Altura da linha do título */
+
 
     margin-bottom: 18px;
+    /* Espaço entre o título e a descrição */
 }
