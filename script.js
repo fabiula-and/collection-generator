@@ -334,6 +334,9 @@ document.getElementById("gerar").addEventListener("click", function() {
     const atmosferaSorteada = atmosferas[
     Math.floor(Math.random() * atmosferas.length)
 ];
+    const universoSorteado = universos[
+    Math.floor(Math.random() * universos.length)
+];
 
     document.getElementById("tema").textContent = temaSorteado;
     document.getElementById("cor").textContent = corSorteada;
@@ -342,6 +345,7 @@ document.getElementById("gerar").addEventListener("click", function() {
     document.getElementById("estampa").textContent = estampaSorteada;
     document.getElementById("linguagem").textContent = linguagemSorteada;
     document.getElementById("atmosfera").textContent = atmosferaSorteada;
+    document.getElementById("universo").textContent = universoSorteado;
 
 
 });
