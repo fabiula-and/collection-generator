@@ -325,11 +325,15 @@ document.getElementById("gerar").addEventListener("click", function() {
     const materialSorteado = materiais[
     Math.floor(Math.random() * materiais.length)
 ];
+    const estampaSorteada = estampas[
+    Math.floor(Math.random() * estampas.length)
+];
 
     document.getElementById("tema").textContent = temaSorteado;
     document.getElementById("cor").textContent = corSorteada;
     document.getElementById("cor-secundaria").textContent = corSecundariaSorteada;
     document.getElementById("material").textContent = materialSorteado;
+    document.getElementById("estampa").textContent = estampaSorteada;
 
 
 });
