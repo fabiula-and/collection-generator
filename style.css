@@ -464,7 +464,7 @@ body > h2 {
 
 
 /* =========================================================
-   ÁREA DOS BOTÕES DA ANOTAÇÃO
+   ÁREA DOS BOTÕES
    ========================================================= */
 
 .acoes-anotacao {
@@ -472,13 +472,13 @@ body > h2 {
     margin-top: 15px;
 
     display: flex;
-    /* Mantém os botões lado a lado */
+    /* Coloca os dois botões lado a lado */
 
     gap: 10px;
-    /* Espaço entre os botões */
+    /* Espaço entre eles */
 
     flex-wrap: wrap;
-    /* Permite adaptação em telas menores */
+    /* Adapta em telas menores */
 }
 
 
@@ -506,33 +506,41 @@ body > h2 {
    BOTÃO EXPORTAR PDF
    ========================================================= */
 
+/*
+   O botão usa exatamente a mesma estética
+   do botão COPIAR RESULTADO.
+*/
+
 #exportar-pdf {
 
     position: relative;
 
     padding: 15px 25px;
 
-    background: transparent;
+    background: #111111;
+    /* Fundo preto */
 
-    color: #111111;
+    color: #F2F0EA;
+    /* Texto off-white */
 
     border: 3px solid #111111;
+
+    font-family: "Space Grotesk", sans-serif;
 
     font-size: 15px;
 
     cursor: pointer;
 
-    transition:
-        padding-right 0.2s ease;
+    transition: padding-right 0.2s ease;
 }
 
 
 /* =========================================================
-   SETA DO BOTÃO PDF
+   SETA DO EXPORTAR PDF
    ========================================================= */
 
 /*
-   A seta fica invisível normalmente.
+   A seta fica escondida normalmente.
    Ela aparece quando o mouse passa pelo botão.
 */
 
@@ -551,7 +559,7 @@ body > h2 {
 
 
 /* =========================================================
-   HOVER DO BOTÃO PDF
+   HOVER DO EXPORTAR PDF
    ========================================================= */
 
 #exportar-pdf:hover {
@@ -683,17 +691,15 @@ body > h2 {
    ========================================================= */
 
 /*
-   Tudo dentro de @media print só é aplicado
-   quando o navegador prepara a página para impressão.
-
-   A aparência normal do site permanece igual.
+   Estas regras só aparecem quando a página
+   está sendo impressa ou salva como PDF.
 */
 
 @media print {
 
 
     /* -----------------------------------------------------
-       CONFIGURAÇÃO GERAL DA PÁGINA
+       CONFIGURAÇÃO GERAL
        ----------------------------------------------------- */
 
     body {
@@ -719,6 +725,22 @@ body > h2 {
 
 
     /* -----------------------------------------------------
+       ESCONDER ESCOLHA DOS MODOS
+       ----------------------------------------------------- */
+
+    /*
+       No PDF não precisamos mostrar a interface
+       para escolher o modo.
+    */
+
+    #titulo-modos,
+    .modos {
+
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
        TÍTULO PRINCIPAL
        ----------------------------------------------------- */
 
@@ -737,17 +759,6 @@ body > h2 {
     body > p {
 
         margin-bottom: 40px;
-    }
-
-
-    /* -----------------------------------------------------
-       ESCONDER A ÁREA DE ESCOLHA DOS MODOS
-       ----------------------------------------------------- */
-
-    #titulo-modos,
-    .modos {
-
-        display: none;
     }
 
 
