@@ -174,11 +174,11 @@ body > h2 {
    ========================================================= */
 
 /*
-   Aqui controlamos o comportamento do botão
-   quando ele é clicado ou selecionado.
+   Aqui controlamos o comportamento dos botões
+   quando passam pelo mouse ou são clicados.
 
-   Isso impede o navegador de colocar aquele
-   azul-marinho padrão.
+   Isso evita aquele azul-marinho padrão
+   do navegador.
 */
 
 
@@ -707,6 +707,11 @@ body > h2 {
    VERSÃO PARA IMPRESSÃO / PDF
    ========================================================= */
 
+/*
+   Estas regras só são aplicadas quando a página
+   está sendo impressa ou salva como PDF.
+*/
+
 @media print {
 
 
@@ -737,13 +742,14 @@ body > h2 {
 
 
     /* -----------------------------------------------------
-       ESCONDER ESCOLHA DOS MODOS
+       ESCONDER ÁREA DE ESCOLHA DOS MODOS
        ----------------------------------------------------- */
 
+    #titulo-escolha,
     #titulo-modos,
     .modos {
 
-        display: none;
+        display: none !important;
     }
 
 
