@@ -4,16 +4,9 @@
 
 body {
     background-color: #F2F0EA;
-    /* Cor de fundo da página */
-
     color: #111111;
-    /* Cor padrão dos textos */
-
     font-family: "Space Grotesk", sans-serif;
-    /* Fonte principal */
-
     margin: 40px;
-    /* Distância das bordas da tela */
 }
 
 
@@ -25,7 +18,6 @@ h1,
 h2 {
     font-family: "Archivo Black", sans-serif;
 }
-
 
 button,
 textarea {
@@ -42,17 +34,10 @@ h1 {
     font-family: "Archivo Black", sans-serif;
 
     font-size: clamp(65px, 9vw, 120px);
-    /*
-       65px = tamanho mínimo
-       9vw = tamanho proporcional à tela
-       120px = tamanho máximo
-    */
 
     line-height: 0.85;
-    /* Espaçamento vertical entre linhas */
 
     letter-spacing: -0.06em;
-    /* Aproxima as letras */
 
     margin: 0 0 40px 0;
 
@@ -165,21 +150,12 @@ body > h2 {
     cursor: pointer;
 
     appearance: none;
-    /* Remove a aparência padrão do navegador */
 }
 
 
 /* =========================================================
    ESTADOS DOS BOTÕES DOS MODOS
    ========================================================= */
-
-/*
-   Controla o comportamento dos botões
-   ao passar o mouse, clicar ou selecionar.
-*/
-
-
-/* Ao passar o mouse */
 
 .modos button:hover {
 
@@ -188,8 +164,6 @@ body > h2 {
     color: #F2F0EA;
 }
 
-
-/* Quando o botão é clicado */
 
 .modos button:active {
 
@@ -200,8 +174,6 @@ body > h2 {
     border-color: #111111;
 }
 
-
-/* Quando o botão recebe foco */
 
 .modos button:focus {
 
@@ -214,8 +186,6 @@ body > h2 {
     outline: none;
 }
 
-
-/* Quando o botão permanece selecionado */
 
 .modos button:focus-visible {
 
@@ -507,6 +477,61 @@ body > h2 {
 
 
 /* =========================================================
+   CONTROLE DA ANOTAÇÃO
+   Botão LIMPAR
+   ========================================================= */
+
+.controle-anotacao {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   BOTÃO LIMPAR ANOTAÇÃO
+   ========================================================= */
+
+#limpar-anotacao {
+
+    background: transparent;
+
+    color: #111111;
+
+    border: none;
+
+    padding: 4px 0;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    appearance: none;
+}
+
+
+/* =========================================================
+   HOVER DO BOTÃO LIMPAR
+   ========================================================= */
+
+#limpar-anotacao:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
    CAIXA DE TEXTO
    ========================================================= */
 
@@ -727,7 +752,8 @@ body > h2 {
 
     #gerar,
     .refresh,
-    .acoes-anotacao {
+    .acoes-anotacao,
+    .controle-anotacao {
 
         display: none !important;
     }
@@ -847,16 +873,6 @@ body > h2 {
     /* -----------------------------------------------------
        REDES SOCIAIS NO PDF
        ----------------------------------------------------- */
-
-    /*
-       No site:
-       INSTAGRAM · LINKEDIN · BEHANCE
-
-       No PDF:
-       INSTAGRAM  @fabiula.lab
-       LINKEDIN   /in/fabiula-andrade
-       BEHANCE    /fabiula-andrade
-    */
 
     .redes-sociais {
 
