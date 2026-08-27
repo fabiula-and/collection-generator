@@ -472,10 +472,10 @@ body > h2 {
     margin-top: 15px;
 
     display: flex;
-    /* Coloca os dois botões lado a lado */
+    /* Mantém os botões lado a lado */
 
     gap: 10px;
-    /* Espaço entre eles */
+    /* Espaço entre os botões */
 
     flex-wrap: wrap;
     /* Adapta em telas menores */
@@ -506,22 +506,15 @@ body > h2 {
    BOTÃO EXPORTAR PDF
    ========================================================= */
 
-/*
-   O botão usa exatamente a mesma estética
-   do botão COPIAR RESULTADO.
-*/
-
 #exportar-pdf {
-
-    position: relative;
 
     padding: 15px 25px;
 
     background: #111111;
-    /* Fundo preto */
+    /* Mesmo fundo do botão COPIAR */
 
     color: #F2F0EA;
-    /* Texto off-white */
+    /* Mesmo texto do botão COPIAR */
 
     border: 3px solid #111111;
 
@@ -530,47 +523,6 @@ body > h2 {
     font-size: 15px;
 
     cursor: pointer;
-
-    transition: padding-right 0.2s ease;
-}
-
-
-/* =========================================================
-   SETA DO EXPORTAR PDF
-   ========================================================= */
-
-/*
-   A seta fica escondida normalmente.
-   Ela aparece quando o mouse passa pelo botão.
-*/
-
-#exportar-pdf::after {
-
-    content: "↓";
-
-    position: absolute;
-
-    right: 12px;
-
-    opacity: 0;
-
-    transition: opacity 0.2s ease;
-}
-
-
-/* =========================================================
-   HOVER DO EXPORTAR PDF
-   ========================================================= */
-
-#exportar-pdf:hover {
-
-    padding-right: 42px;
-}
-
-
-#exportar-pdf:hover::after {
-
-    opacity: 1;
 }
 
 
@@ -691,8 +643,8 @@ body > h2 {
    ========================================================= */
 
 /*
-   Estas regras só aparecem quando a página
-   está sendo impressa ou salva como PDF.
+   Estas regras só são aplicadas quando a página
+   é impressa ou salva como PDF.
 */
 
 @media print {
@@ -727,11 +679,6 @@ body > h2 {
     /* -----------------------------------------------------
        ESCONDER ESCOLHA DOS MODOS
        ----------------------------------------------------- */
-
-    /*
-       No PDF não precisamos mostrar a interface
-       para escolher o modo.
-    */
 
     #titulo-modos,
     .modos {
