@@ -146,6 +146,8 @@ body > h2 {
 
     background: transparent;
 
+    color: #111111;
+
     padding: 20px 32px;
 
     display: flex;
@@ -161,6 +163,72 @@ body > h2 {
     box-sizing: border-box;
 
     cursor: pointer;
+
+    appearance: none;
+    /* Remove a aparência padrão do navegador */
+}
+
+
+/* =========================================================
+   ESTADOS DOS BOTÕES DOS MODOS
+   ========================================================= */
+
+/*
+   Aqui controlamos o comportamento do botão
+   quando ele é clicado ou selecionado.
+
+   Isso impede o navegador de colocar aquele
+   azul-marinho padrão.
+*/
+
+
+/* Ao passar o mouse */
+
+.modos button:hover {
+
+    background: #111111;
+
+    color: #F2F0EA;
+}
+
+
+/* Quando o botão é clicado */
+
+.modos button:active {
+
+    background: #111111;
+
+    color: #F2F0EA;
+
+    border-color: #111111;
+}
+
+
+/* Quando o botão recebe foco */
+
+.modos button:focus {
+
+    background: #111111;
+
+    color: #F2F0EA;
+
+    border-color: #111111;
+
+    outline: none;
+}
+
+
+/* Quando o botão permanece selecionado */
+
+.modos button:focus-visible {
+
+    background: #111111;
+
+    color: #F2F0EA;
+
+    border-color: #111111;
+
+    outline: none;
 }
 
 
@@ -221,6 +289,8 @@ body > h2 {
     font-weight: 700;
 
     cursor: pointer;
+
+    appearance: none;
 }
 
 
@@ -472,13 +542,10 @@ body > h2 {
     margin-top: 15px;
 
     display: flex;
-    /* Mantém os botões lado a lado */
 
     gap: 10px;
-    /* Espaço entre os botões */
 
     flex-wrap: wrap;
-    /* Adapta em telas menores */
 }
 
 
@@ -511,10 +578,8 @@ body > h2 {
     padding: 15px 25px;
 
     background: #111111;
-    /* Mesmo fundo do botão COPIAR */
 
     color: #F2F0EA;
-    /* Mesmo texto do botão COPIAR */
 
     border: 3px solid #111111;
 
@@ -641,11 +706,6 @@ body > h2 {
 /* =========================================================
    VERSÃO PARA IMPRESSÃO / PDF
    ========================================================= */
-
-/*
-   Estas regras só são aplicadas quando a página
-   é impressa ou salva como PDF.
-*/
 
 @media print {
 
