@@ -1356,3 +1356,73 @@ document.getElementById(
 
     }
 );
+
+/* =========================================================
+   EXPORTAR PDF
+   ========================================================= */
+
+/*
+   O navegador já possui uma ferramenta própria
+   para gerar PDF através da impressão.
+
+   Assim conseguimos aproveitar exatamente o HTML
+   e o CSS que já criamos para a ficha.
+*/
+
+document.getElementById(
+    "exportar-pdf"
+).addEventListener(
+    "click",
+    function() {
+
+        /*
+           Pequeno feedback visual para indicar
+           que o PDF está sendo preparado.
+        */
+
+        const botao =
+            document.getElementById(
+                "exportar-pdf"
+            );
+
+
+        const textoOriginal =
+            botao.textContent;
+
+
+        botao.textContent =
+            "EXPORTANDO ↓";
+
+
+        /*
+           Pequeno atraso para o navegador conseguir
+           atualizar o texto antes de abrir a impressão.
+        */
+
+        setTimeout(
+            function() {
+
+                window.print();
+
+
+                /*
+                   Depois que a janela de impressão
+                   for aberta, restauramos o botão.
+                */
+
+                setTimeout(
+                    function() {
+
+                        botao.textContent =
+                            textoOriginal;
+
+                    },
+                    1000
+                );
+
+            },
+            150
+        );
+
+    }
+);
