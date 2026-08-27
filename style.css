@@ -504,21 +504,29 @@ body > h2 {
 .rodape {
 
     margin: 80px 30px 25px 30px;
-    /* Espaço entre a ferramenta e o rodapé */
+    /* Espaço entre a ficha e o rodapé */
 
     padding-top: 18px;
     /* Espaço entre a linha e o conteúdo */
 
     border-top: 1px solid #111111;
-    /* Linha de fechamento da página */
+    /* Linha de fechamento */
 
     display: flex;
+    /* Coloca assinatura e redes lado a lado */
 
     justify-content: space-between;
     /* Assinatura à esquerda
        redes à direita */
 
     align-items: center;
+    /* Alinha os dois verticalmente */
+
+    gap: 30px;
+    /* Espaço mínimo entre os dois lados */
+
+    white-space: nowrap;
+    /* Impede o rodapé de quebrar em várias linhas */
 }
 
 
@@ -530,14 +538,29 @@ body > h2 {
 
     font-family: "IBM Plex Mono", monospace;
 
-    font-size: 9px;
-    /* Pequeno e discreto */
+    font-size: 11px;
+    /* Tamanho da assinatura */
 
-    font-weight: 500;
+    font-weight: 400;
+    /* "IDEALIZADO POR" fica normal */
 
     letter-spacing: 0.04em;
 
     text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NOME NA ASSINATURA
+   ========================================================= */
+
+/*
+   Como o nome está dentro do mesmo elemento,
+   usamos esta regra para destacar FABIULA ANDRADE.
+*/
+
+.assinatura {
+    font-weight: 700;
 }
 
 
@@ -551,15 +574,19 @@ body > h2 {
 
     align-items: center;
 
-    gap: 10px;
-    /* Espaço entre nomes e separadores */
+    justify-content: flex-end;
+
+    gap: 9px;
+    /* Espaço entre os nomes e as bolinhas */
 
     font-family: "IBM Plex Mono", monospace;
 
     font-size: 9px;
-    /* Mesmo tamanho da assinatura */
+    /* Redes menores que a assinatura */
 
     letter-spacing: 0.04em;
+
+    white-space: nowrap;
 }
 
 
@@ -572,7 +599,6 @@ body > h2 {
     color: #111111;
 
     text-decoration: none;
-    /* Remove sublinhado */
 
     font-weight: 500;
 }
@@ -585,7 +611,6 @@ body > h2 {
 .redes-sociais a:hover {
 
     text-decoration: underline;
-    /* Mostra que é clicável */
 }
 
 
@@ -596,5 +621,6 @@ body > h2 {
 .redes-sociais span {
 
     opacity: 0.5;
-    /* Deixa a bolinha mais discreta */
+
+    font-size: 10px;
 }
