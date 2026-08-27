@@ -1187,6 +1187,42 @@ const campoAnotacao =
 
 
 /* =========================================================
+   LIMPAR ANOTAÇÃO
+   ========================================================= */
+
+/*
+   Este botão limpa SOMENTE a caixa "Sua ideia".
+
+   Ele não:
+   - apaga o resultado;
+   - muda o modo;
+   - sorteia novamente;
+   - recarrega a página.
+*/
+
+const botaoLimparAnotacao =
+    document.getElementById(
+        "limpar-anotacao"
+    );
+
+
+if (botaoLimparAnotacao) {
+
+    botaoLimparAnotacao.addEventListener(
+        "click",
+        function() {
+
+            campoAnotacao.value = "";
+
+            campoAnotacao.focus();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
    COPIAR RESULTADO
    ========================================================= */
 
@@ -1356,6 +1392,7 @@ document.getElementById(
 
     }
 );
+
 
 /* =========================================================
    EXPORTAR PDF
