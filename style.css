@@ -35,16 +35,24 @@ textarea {
 
 /* =========================================================
    TÍTULO PRINCIPAL
+   COLLECTION GENERATOR
    ========================================================= */
 
 h1 {
     font-family: "Archivo Black", sans-serif;
 
     font-size: clamp(65px, 9vw, 120px);
+    /*
+       65px = tamanho mínimo
+       9vw = tamanho proporcional à tela
+       120px = tamanho máximo
+    */
 
     line-height: 0.85;
+    /* Espaçamento vertical entre linhas */
 
     letter-spacing: -0.06em;
+    /* Aproxima as letras */
 
     margin: 0 0 40px 0;
 
@@ -456,12 +464,21 @@ body > h2 {
 
 
 /* =========================================================
-   ÁREA DO BOTÃO DE COPIAR
+   ÁREA DOS BOTÕES DA ANOTAÇÃO
    ========================================================= */
 
 .acoes-anotacao {
 
     margin-top: 15px;
+
+    display: flex;
+    /* Mantém os botões lado a lado */
+
+    gap: 10px;
+    /* Espaço entre os botões */
+
+    flex-wrap: wrap;
+    /* Permite adaptação em telas menores */
 }
 
 
@@ -486,40 +503,95 @@ body > h2 {
 
 
 /* =========================================================
+   BOTÃO EXPORTAR PDF
+   ========================================================= */
+
+#exportar-pdf {
+
+    position: relative;
+
+    padding: 15px 25px;
+
+    background: transparent;
+
+    color: #111111;
+
+    border: 3px solid #111111;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        padding-right 0.2s ease;
+}
+
+
+/* =========================================================
+   SETA DO BOTÃO PDF
+   ========================================================= */
+
+/*
+   A seta fica invisível normalmente.
+   Ela aparece quando o mouse passa pelo botão.
+*/
+
+#exportar-pdf::after {
+
+    content: "↓";
+
+    position: absolute;
+
+    right: 12px;
+
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER DO BOTÃO PDF
+   ========================================================= */
+
+#exportar-pdf:hover {
+
+    padding-right: 42px;
+}
+
+
+#exportar-pdf:hover::after {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
    RODAPÉ / ASSINATURA
    ========================================================= */
 
 .rodape {
 
     margin: 80px 30px 25px 30px;
-    /* Espaço entre a ferramenta e o rodapé */
 
     padding-top: 18px;
-    /* Espaço entre a linha e o conteúdo */
 
     border-top: 1px solid #111111;
-    /* Linha de fechamento */
 
     display: flex;
-    /* Coloca assinatura e redes lado a lado */
 
     justify-content: space-between;
-    /* Assinatura à esquerda
-       redes à direita */
 
     align-items: center;
-    /* Alinha verticalmente */
 
     gap: 30px;
-    /* Espaço mínimo entre os dois lados */
 
     white-space: nowrap;
-    /* Mantém tudo na mesma linha */
 }
 
 
 /* =========================================================
-   TEXTO "IDEALIZADO POR"
+   ASSINATURA
    ========================================================= */
 
 .assinatura {
@@ -527,10 +599,8 @@ body > h2 {
     font-family: "IBM Plex Mono", monospace;
 
     font-size: 11px;
-    /* Tamanho da assinatura */
 
     font-weight: 400;
-    /* NORMAL */
 
     letter-spacing: 0.04em;
 
@@ -545,7 +615,6 @@ body > h2 {
 .assinatura strong {
 
     font-weight: 700;
-    /* SOMENTE FABIULA ANDRADE fica em negrito */
 }
 
 
@@ -606,4 +675,167 @@ body > h2 {
     opacity: 0.5;
 
     font-size: 10px;
+}
+
+
+/* =========================================================
+   VERSÃO PARA IMPRESSÃO / PDF
+   ========================================================= */
+
+/*
+   Tudo dentro de @media print só é aplicado
+   quando o navegador prepara a página para impressão.
+
+   A aparência normal do site permanece igual.
+*/
+
+@media print {
+
+
+    /* -----------------------------------------------------
+       CONFIGURAÇÃO GERAL DA PÁGINA
+       ----------------------------------------------------- */
+
+    body {
+
+        background: #F2F0EA;
+
+        color: #111111;
+
+        margin: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       ESCONDER ELEMENTOS DE INTERFACE
+       ----------------------------------------------------- */
+
+    #gerar,
+    .refresh,
+    .acoes-anotacao {
+
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TÍTULO PRINCIPAL
+       ----------------------------------------------------- */
+
+    h1 {
+
+        font-size: 70px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       SUBTÍTULO
+       ----------------------------------------------------- */
+
+    body > p {
+
+        margin-bottom: 40px;
+    }
+
+
+    /* -----------------------------------------------------
+       ESCONDER A ÁREA DE ESCOLHA DOS MODOS
+       ----------------------------------------------------- */
+
+    #titulo-modos,
+    .modos {
+
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       TÍTULO RESULTADO
+       ----------------------------------------------------- */
+
+    #titulo-resultado {
+
+        margin-left: 0;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       FICHA
+       ----------------------------------------------------- */
+
+    #resultado-modo,
+    #resultado-tema,
+    #resultado-cor,
+    #resultado-cor-secundaria,
+    #resultado-material,
+    #resultado-estampa,
+    #resultado-linguagem,
+    #resultado-atmosfera,
+    #resultado-universo,
+    #resultado-construcao {
+
+        margin-left: 0;
+
+        margin-right: 0;
+
+        break-inside: avoid;
+
+        page-break-inside: avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       ANOTAÇÃO
+       ----------------------------------------------------- */
+
+    #anotacao-container {
+
+        margin-left: 0;
+
+        margin-right: 0;
+
+        break-inside: avoid;
+
+        page-break-inside: avoid;
+    }
+
+
+    #anotacao {
+
+        min-height: 220px;
+
+        resize: none;
+    }
+
+
+    /* -----------------------------------------------------
+       RODAPÉ
+       ----------------------------------------------------- */
+
+    .rodape {
+
+        margin-left: 0;
+
+        margin-right: 0;
+
+        break-inside: avoid;
+
+        page-break-inside: avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       LINKS NO PDF
+       ----------------------------------------------------- */
+
+    .redes-sociais a {
+
+        color: #111111;
+
+        text-decoration: none;
+    }
 }
