@@ -4,9 +4,16 @@
 
 body {
     background-color: #F2F0EA;
+    /* Cor de fundo da página */
+
     color: #111111;
+    /* Cor padrão dos textos */
+
     font-family: "Space Grotesk", sans-serif;
+    /* Fonte principal */
+
     margin: 40px;
+    /* Distância das bordas da tela */
 }
 
 
@@ -336,16 +343,6 @@ body > h2 {
    BOTÕES DE REFRESH
    ========================================================= */
 
-/*
-   Agora usamos um SVG em vez do emoji 🔄.
-
-   Isso nos permite controlar exatamente:
-   - cor
-   - tamanho
-   - espessura
-   - posição
-*/
-
 .refresh {
 
     background: transparent;
@@ -359,17 +356,14 @@ body > h2 {
     cursor: pointer;
 
     width: 30px;
-    /* Largura da área clicável */
 
     height: 30px;
-    /* Altura da área clicável */
 
     padding: 5px;
 
     appearance: none;
 
     justify-self: end;
-    /* Mantém todos na mesma coluna */
 
     align-self: center;
 
@@ -388,35 +382,28 @@ body > h2 {
 .refresh svg {
 
     width: 20px;
-    /* Tamanho do ícone */
 
     height: 20px;
 
     fill: none;
-    /* Não preenche o desenho */
 
     stroke: currentColor;
-    /* Usa a cor definida no botão */
 
     stroke-width: 1.8;
-    /* Espessura do desenho */
 
     stroke-linecap: round;
-    /* Extremidades arredondadas */
 
     stroke-linejoin: round;
-    /* Junções suaves */
 }
 
 
 /* =========================================================
-   EFEITO AO PASSAR O MOUSE
+   EFEITO DO REFRESH
    ========================================================= */
 
 .refresh:hover {
 
     transform: rotate(-25deg);
-    /* Pequena reação ao passar o mouse */
 }
 
 
@@ -497,6 +484,7 @@ body > h2 {
     cursor: pointer;
 }
 
+
 /* =========================================================
    RODAPÉ / ASSINATURA
    ========================================================= */
@@ -504,7 +492,7 @@ body > h2 {
 .rodape {
 
     margin: 80px 30px 25px 30px;
-    /* Espaço entre a ficha e o rodapé */
+    /* Espaço entre a ferramenta e o rodapé */
 
     padding-top: 18px;
     /* Espaço entre a linha e o conteúdo */
@@ -520,18 +508,18 @@ body > h2 {
        redes à direita */
 
     align-items: center;
-    /* Alinha os dois verticalmente */
+    /* Alinha verticalmente */
 
     gap: 30px;
     /* Espaço mínimo entre os dois lados */
 
     white-space: nowrap;
-    /* Impede o rodapé de quebrar em várias linhas */
+    /* Mantém tudo na mesma linha */
 }
 
 
 /* =========================================================
-   ASSINATURA
+   TEXTO "IDEALIZADO POR"
    ========================================================= */
 
 .assinatura {
@@ -542,7 +530,7 @@ body > h2 {
     /* Tamanho da assinatura */
 
     font-weight: 400;
-    /* "IDEALIZADO POR" fica normal */
+    /* NORMAL */
 
     letter-spacing: 0.04em;
 
@@ -551,16 +539,13 @@ body > h2 {
 
 
 /* =========================================================
-   NOME NA ASSINATURA
+   NOME DA AUTORA
    ========================================================= */
 
-/*
-   Como o nome está dentro do mesmo elemento,
-   usamos esta regra para destacar FABIULA ANDRADE.
-*/
+.assinatura strong {
 
-.assinatura {
     font-weight: 700;
+    /* SOMENTE FABIULA ANDRADE fica em negrito */
 }
 
 
@@ -577,12 +562,10 @@ body > h2 {
     justify-content: flex-end;
 
     gap: 9px;
-    /* Espaço entre os nomes e as bolinhas */
 
     font-family: "IBM Plex Mono", monospace;
 
     font-size: 9px;
-    /* Redes menores que a assinatura */
 
     letter-spacing: 0.04em;
 
@@ -623,12 +606,4 @@ body > h2 {
     opacity: 0.5;
 
     font-size: 10px;
-}
-
-/* =========================================================
-   NOME DA AUTORA
-   ========================================================= */
-
-.assinatura strong {
-    font-weight: 700;
 }
